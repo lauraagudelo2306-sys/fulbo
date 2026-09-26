@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,6 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/estilo.css">
@@ -16,75 +18,123 @@
 
     <div class="inicio">
 
-    <div class="numero">01</div>
+        <div class="numero">01</div>
 
-    <div class="titulo">FULBO</div>
+        <div class="titulo">FULBO</div>
 
-    <div class="subtitulo">
-        una representación<br>
-        del fútbol
+        <div class="subtitulo">
+            una representación<br>
+            del fútbol
+        </div>
+
+        <button id="comenzar">
+            <span>→</span>
+            COMENZAR EL PARTIDO
+        </button>
+
     </div>
 
-    <button id="comenzar">
-        <span>→</span>
-        COMENZAR EL PARTIDO
-    </button>
 
-</div>
+    <button id="saltar">→</button>
 
-<button id="saltar">→</button>
 
     <video id="partido">
-        <source src="videos/partidoo.mp4"
-        0" type="video/mp4">
+        <source src="videos/partidoo.mp4" type="video/mp4">
     </video>
 
+
     <audio id="sonidoInterferencia" src="sonidos/interferenciaa.wav"></audio>
+
     <audio id="sonidoGol" src="sonidos/sonido.wav"></audio>
+
 
     <div id="interferencia"></div>
 
+
     <div id="pregunta">
-        ¿Te imaginas ver el fútbol sin verlo?
+        Si no podemos ver el acontecimiento, ¿Cómo podemos volver a él?
     </div>
 
- <div id="gol">
-    <span>G</span><span>O</span><span>O</span><span>O</span><span>O</span><span>O</span><span>O</span><span>L</span>
-</div>
+
+    <div id="gol">
+
+        <span>G</span>
+        <span>O</span>
+        <span>O</span>
+        <span>O</span>
+        <span>O</span>
+        <span>O</span>
+        <span>O</span>
+        <span>L</span>
+
+    </div>
+
 
     <div id="cancha">
 
         <div class="linea-medio"></div>
+
         <div class="circulo-medio"></div>
 
         <div class="area area-izquierda"></div>
+
         <div class="area area-derecha"></div>
 
         <div class="portería porteria-izquierda"></div>
+
         <div class="portería porteria-derecha"></div>
-<div class="jugador jugador-1"></div>
-<div class="jugador jugador-2"></div>
-<div class="jugador jugador-3"></div>
-<div class="jugador jugador-4"></div>
-<div class="jugador jugador-5"></div>
+
+
+        <div class="jugador jugador-1"></div>
+
+        <div class="jugador jugador-2"></div>
+
+        <div class="jugador jugador-3"></div>
+
+        <div class="jugador jugador-4"></div>
+
+        <div class="jugador jugador-5"></div>
+
     </div>
 
-   <img id="personaje" src="imagenes/jugador.png">
 
-   <div id="introduccion">
-    <div class="numero-intro">03</div>
+    <img id="personaje" src="imagenes/jugador.png">
 
-    <div class="titulo-intro">
-        ¿QUÉ ESTAMOS VIENDO?
+
+    <!-- =========================
+         SECCIÓN 03
+    ========================= -->
+
+    <div id="introduccion">
+
+        <div class="numero-intro">
+            03
+        </div>
+
+        <div class="titulo-intro">
+            ¿CÓMO RECORDAMOS LA JUGADA?
+        </div>
+
+        <div class="texto-intro">
+            Una jugada pasa una vez.
+Pero podemos volver a ella de muchas formas.<br>
+           ¿Qué cambia cada vez que una jugada se representa?
+        </div>
+
+        <button id="continuarCroquis">
+
+            <span>→</span>
+
+            SEGUIR LA JUGADA
+
+        </button>
+
     </div>
 
-    <div class="texto-intro">
-        Una jugada puede convertirse<br>
-        acá va un texto xd
-    </div>
 
     <script src="js/script.js"></script>
 
 </body>
 
 </html>
+

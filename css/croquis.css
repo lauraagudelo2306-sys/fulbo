@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f3f1eb;
+    color: #171717;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   NÚMERO
+========================= */
+
+.numero-croquis {
+    position: fixed;
+
+    top: 28px;
+    right: 35px;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.encabezado-croquis {
+    position: absolute;
+
+    top: 28px;
+    left: 35px;
+    right: 100px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.marca {
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.etiqueta {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro-croquis {
+    padding-top: 150px;
+
+    margin-left: 8%;
+
+    width: 500px;
+}
+
+.texto-pequeno {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.intro-croquis h1 {
+    font-size: clamp(65px, 9vw, 130px);
+
+    line-height: 0.85;
+
+    letter-spacing: -6px;
+
+    font-weight: 700;
+}
+
+.intro-croquis p {
+    margin-top: 35px;
+
+    width: 390px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+/* =========================
+   COMPOSICIÓN PRINCIPAL
+========================= */
+
+.composicion-seccion {
+    display: flex;
+
+    align-items: center;
+
+    min-height: 750px;
+
+    margin-top: 80px;
+
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+
+/* =========================
+   TEXTO
+========================= */
+
+.composicion-seccion .intro-croquis {
+    width: 45%;
+
+    margin-left: 0;
+
+    padding-top: 0;
+}
+
+
+/* =========================
+   IMAGEN
+========================= */
+
+.visor-croquis {
+    width: 60%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.composicion-croquis {
+    width: 145%;
+    max-width: none;
+    display: block;
+    margin: 0;
+
+    transition: transform 0.6s ease;
+}
+
+.intro-croquis {
+    transition: opacity 0.2s ease;
+}
+
+.punto-jugador {
+
+    position: absolute;
+
+    width: 12px;
+
+    height: 12px;
+
+    background: #171717;
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    transition: opacity 0.5s ease, transform 0.2s ease;
+
+    z-index: 10;
+
+    cursor: pointer;
+}
+
+.punto-1 {
+
+    top: 70%;
+
+    left: 50%;
+}
+
+.punto-2 {
+
+    top: 72%;
+
+    left:65%;
+}
+
+
+
+.punto-jugador:hover {
+
+    transform: scale(1.5);
+}
+.punto-jugador.activo {
+    transform: scale(1.8);
+}
+
+.texto-panagua {
+    position: absolute;
+    top: 55%;
+    left: 55%;
+
+    width: 280px;
+    padding: 20px;
+
+    background: #f3f1eb;
+    border: 1px solid #171717;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.4s ease;
+}
+.etiqueta-panagua {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.texto-panagua p {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.texto-panagua.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.texto-balon {
+    position: absolute;
+    top: 68%;
+    left:68%;
+
+    width: 280px;
+    padding: 20px;
+
+    background: #f3f1eb;
+    border: 1px solid #171717;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.4s ease;
+}
+
+.etiqueta-balon {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.texto-balon p {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.texto-balon.visible {
+    opacity: 1;
+    pointer-events: auto;
+}

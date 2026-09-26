@@ -16,19 +16,29 @@ const personaje = document.getElementById("personaje");
 const saltar = document.getElementById("saltar");
 const introduccion = document.getElementById("introduccion");
 
+const continuarCroquis = document.getElementById("continuarCroquis");
 
+
+
+// =========================
 // INICIAR PARTIDO
+// =========================
+
 boton.addEventListener("click", function () {
 
     inicio.style.display = "none";
 
     video.style.display = "block";
+
     video.play();
 
 });
 
 
+// =========================
 // CUANDO TERMINA EL VIDEO
+// =========================
+
 video.addEventListener("ended", function () {
 
     video.style.display = "none";
@@ -39,7 +49,8 @@ video.addEventListener("ended", function () {
     sonidoInterferencia.currentTime = 0;
     sonidoInterferencia.play();
 
-    // La interferencia dura lo mismo que su audio
+
+    // 4 segundos de interferencia
     setTimeout(function () {
 
         interferencia.style.display = "none";
@@ -47,23 +58,24 @@ video.addEventListener("ended", function () {
         sonidoInterferencia.pause();
         sonidoInterferencia.currentTime = 0;
 
+
         // PREGUNTA
         pregunta.style.display = "block";
 
-        // EMPIEZA EL SONIDO DEL PÚBLICO
+
+        // SONIDO DEL PÚBLICO
         sonidoGol.currentTime = 0;
         sonidoGol.play();
 
-        // El audio del público tiene 3 segundos antes del gol
+
+        // 4 segundos antes del gol
         setTimeout(function () {
 
             pregunta.style.display = "none";
 
-            // GOOOOOOL + CANCHA
             gol.style.display = "block";
             cancha.style.display = "block";
 
-            // APARECEN LOS JUGADORES
             mostrarJugadores();
 
         }, 4000);
@@ -73,8 +85,10 @@ video.addEventListener("ended", function () {
 });
 
 
-
+// =========================
 // MOSTRAR JUGADORES
+// =========================
+
 function mostrarJugadores() {
 
     const jugadores = document.querySelectorAll(".jugador");
@@ -82,59 +96,100 @@ function mostrarJugadores() {
     jugadores.forEach(function (jugador, indice) {
 
         setTimeout(function () {
+
             jugador.classList.add("visible");
+
         }, indice * 500);
 
     });
 
-    // Después aparece el "pulsa"
+
+    // Aparece "pulsa"
     setTimeout(function () {
 
-        document.querySelector(".jugador-5").classList.add("llamar");
+        document
+            .querySelector(".jugador-5")
+            .classList.add("llamar");
 
     }, 3500);
 
 }
 
 
-// CLICK EN EL JUGADOR 5
-document.querySelector(".jugador-5").addEventListener("click", function () {
+// =========================
+// CLICK EN JUGADOR 5
+// =========================
 
-    cancha.classList.add("salir");
+document
+    .querySelector(".jugador-5")
+    .addEventListener("click", function () {
 
-    gol.style.opacity = "0";
-    gol.style.transition = "opacity 0.5s ease";
+        cancha.classList.add("salir");
 
-  setTimeout(function () {
+        gol.style.opacity = "0";
+        gol.style.transition = "opacity 0.5s ease";
 
-    personaje.classList.add("aparecer");
 
-    setTimeout(function () {
-        introduccion.classList.add("aparecer");
-    }, 500);
+        setTimeout(function () {
 
-}, 1000);
+            personaje.classList.add("aparecer");
+
+
+            setTimeout(function () {
+
+                introduccion.classList.add("aparecer");
+
+            }, 500);
+
+        }, 1000);
+
+    });
+
+
+// =========================
+// PASAR DE 03 A CROQUIS
+// =========================
+
+continuarCroquis.addEventListener("click", function () {
+
+    window.location.href = "croquis.html";
 
 });
 
 
-// BOTÓN PARA SALTAR EL VIDEO
+// =========================
+// SALTAR VIDEO
+// =========================
+
 saltar.addEventListener("click", function () {
 
     video.pause();
+
     video.style.display = "none";
 
     inicio.style.display = "none";
 
     interferencia.style.display = "none";
+
     pregunta.style.display = "none";
 
     sonidoInterferencia.pause();
     sonidoInterferencia.currentTime = 0;
 
     gol.style.display = "block";
+
     cancha.style.display = "block";
 
     mostrarJugadores();
+
+});
+
+puntosJugador.forEach(function (punto) {
+
+    punto.addEventListener("click", function () {
+
+        punto.classList.toggle("activo");
+
+    });
 
 });
