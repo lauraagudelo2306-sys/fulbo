@@ -5,56 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos Actuales - Tracking y xG</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/datos.css">
 </head>
-<body>
+<body class="fondo-beige">
     <header>
-        <nav>
+        <nav class="menu-principal">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="croquis.html">Croquis</a></li>
-                <li><a href="datos.html">Datos y Tracking</a></li>
+                <li><a href="datos.html" classactivo>Datos y Tracking</a></li>
                 <li><a href="comparacion.html">Comparación</a></li>
                 <li><a href="archivo.html">Archivo</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="contenido-principal">
-        <h1>Datos actuales, Tracking y Mapas de Calor</h1>
-        <p>Hoy en día existe una tecnología mucho más avanzada que permite presentar una mayor cantidad de datos con alta precisión. Los mismos datos que el croquis dibujado a mano (posición de los jugadores, trayectoria del balón y acciones principales) hoy se capturan con cámaras de tracking óptico, dispositivos GPS que llevan los jugadores y sistemas de registro de eventos.</p>
-        
-        <p>Empresas como <strong>StatsBomb</strong> y <strong>Stats Perform (Opta)</strong> convierten esa información en representaciones automáticas: mapas de calor (<em>heat maps</em>), redes de pases y gráficos de goles esperados (<em>xG</em>).</p>
-
-        <section class="bloque-conceptos">
-            <h2>¿Qué selecciona y qué deja fuera?</h2>
-            <ul>
-                <li><strong>Qué selecciona:</strong> Las posiciones exactas de los jugadores a lo largo de todo el partido, las zonas de mayor actividad, las conexiones de pases y la probabilidad estadística de cada acción.</li>
-                <li><strong>Qué deja fuera:</strong> La subjetividad del momento, el contexto emocional, el sonido, las decisiones que no se midieron y todo lo que el sistema no está programado para registrar. Aunque parece más "completo", sigue siendo una selección de lo que se consideró importante medir.</li>
-            </ul>
+    <main class="contenedor-datos">
+        <section class="seccion-intro">
+            <h1>Datos actuales, Tracking y Mapas de Calor</h1>
+            <p>Frente al croquis manual, la tecnología actual captura cada movimiento con una precisión milimétrica a través de cámaras ópticas y dispositivos GPS.</p>
         </section>
 
-        <section class="glosario">
-            <h2>Conceptos Clave</h2>
-            
-            <div class="tarjeta">
-                <h3>Goles Esperados (xG)</h3>
-                <p>Mide la calidad de una ocasión de gol. Le asigna a cada remate un valor entre 0 y 1 según la probabilidad de que termine en gol, calculada con miles de remates históricos parecidos.</p>
+        <section class="panel-interactivo">
+            <div class="tarjeta-concepto" onclick="this.classList.toggle('activo')">
+                <h3>Goles Esperados (xG) <span>+</span></h3>
+                <p class="detalles">Mide la calidad de cada remate asignándole un valor entre 0 y 1 basado en miles de situaciones históricas similares.</p>
             </div>
 
-            <div class="tarjeta">
-                <h3>Tracking Óptico</h3>
-                <p>Sistemas que utilizan múltiples cámaras distribuidas en el estadio (como en el Mundial de Catar 2022) para rastrear el balón y hasta 29 puntos del cuerpo de cada jugador unas 50 veces por segundo.</p>
+            <div class="tarjeta-concepto" onclick="this.classList.toggle('activo')">
+                <h3>Tracking Óptico <span>+</span></h3>
+                <p class="detalles">Sistemas multicámara (como los usados en Catar) que rastrean el balón y hasta 29 puntos del cuerpo de cada jugador en tiempo real.</p>
             </div>
 
-            <div class="tarjeta">
-                <h3>Mapas de Calor (Heatmaps)</h3>
-                <p>Gráficos sobre la cancha que usan colores (cálidos para mayor presencia, fríos para menor) para mostrar en qué zonas estuvo más tiempo o tuvo más actividad un jugador o equipo.</p>
+            <div class="tarjeta-concepto" onclick="this.classList.toggle('activo')">
+                <h3>Mapas de Calor (Heatmaps) <span>+</span></h3>
+                <p class="detalles">Representaciones visuales mediante colores que traducen el volumen de presencia y desplazamiento de un jugador sobre la cancha.</p>
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>Proyecto de visualización y representación del fútbol.</p>
-    </footer>
 </body>
 </html>
