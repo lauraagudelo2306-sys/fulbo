@@ -1,72 +1,53 @@
 /* =========================
-   RADIO Y PERILLAS FIJAS
+   GLOBOS DE TEXTO EXPLICATIVOS (A LOS LADOS DE LA RADIO)
 ========================= */
 
-.contenedor-principal-radio {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Contenedor estricto con un tamaño fijo para que la radio no cambie */
-.contenedor-radio-perillas {
-    position: relative;
-    display: inline-block;
-    width: 320px;
-    margin: 30px auto;
-}
-
-.composicion-croquis {
-    width: 320px !important;
-    max-width: 320px !important;
-    height: auto !important;
-    display: block;
-}
-
-/* Botón perilla izquierda (Perilla grande de la radio) */
-#btn-relato {
+/* Estilo base para los dos cuadros de texto explicativos */
+#info-relato,
+#info-seleccion {
+    display: none; /* Ocultos por defecto */
     position: absolute;
-    top: 61%;
-    left: 23.5%;
-    width: 30px;
-    height: 30px;
-    background-color: #171717;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 100;
-    transform: translate(-50%, -50%);
-}
-
-/* Botón perilla derecha (Perilla pequeña de la radio) */
-#btn-seleccion {
-    position: absolute;
-    top: 61%;
-    left: 81%;
-    width: 18px;
-    height: 18px;
-    background-color: #171717;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 100;
-    transform: translate(-50%, -50%);
-}
-
-/* El texto "Pulsa" flotando limpiamente justo encima de cada perilla */
-.texto-pulsa {
-    position: absolute;
-    top: -24px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 9px;
-    font-weight: bold;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 230px;
+    background: #fdfcf7;
+    border: 2px solid #171717;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 0px #171717;
+    font-size: 12px;
+    line-height: 1.4;
     color: #171717;
-    text-transform: uppercase;
-    white-space: nowrap;
-    background: #f3f1eb;
-    padding: 2px 5px;
-    border: 1px solid #171717;
-    border-radius: 3px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
-    pointer-events: none;
+    text-align: left;
+    z-index: 300;
+}
+
+/* Cuadro izquierdo (Aparece a la izquierda de la radio) */
+#info-relato {
+    right: 105%; /* Se ubica volando a la izquierda del contenedor de 320px */
+}
+
+/* Cuadro derecho (Aparece a la derecha de la radio) */
+#info-seleccion {
+    left: 105%; /* Se ubica volando a la derecha del contenedor de 320px */
+}
+
+/* Clase que activa el JavaScript para mostrarlos cuando se presiona la perilla */
+#info-relato.activo-texto,
+#info-seleccion.activo-texto {
+    display: block !important;
+}
+
+/* Ajustes para pantallas pequeñas (por si se ven apretados en celulares) */
+@media (max-width: 768px) {
+    #info-relato,
+    #info-seleccion {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        transform: none;
+        width: 100%;
+        margin-top: 15px;
+    }
 }
