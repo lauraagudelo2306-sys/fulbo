@@ -1,47 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datos Actuales - Tracking y xG</title>
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/datos.css">
+    <title>Fulbo — Radio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/croquis.css">
 </head>
-<body class="fondo-beige">
-    <header>
-        <nav class="menu-principal">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="croquis.html">Croquis</a></li>
-                <li><a href="datos.html" classactivo>Datos y Tracking</a></li>
-                <li><a href="comparacion.html">Comparación</a></li>
-                <li><a href="archivo.html">Archivo</a></li>
-            </ul>
-        </nav>
+
+<body>
+
+    <!-- NÚMERO DE SECCIÓN -->
+    <div class="numero-croquis">
+        05
+    </div>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado-croquis">
+        <div class="marca">
+            FULBO
+        </div>
+        <div class="etiqueta">
+            ARCHIVO DE RADIO
+        </div>
     </header>
 
-    <main class="contenedor-datos">
-        <section class="seccion-intro">
-            <h1>Datos actuales, Tracking y Mapas de Calor</h1>
-            <p>Frente al croquis manual, la tecnología actual captura cada movimiento con una precisión milimétrica a través de cámaras ópticas y dispositivos GPS.</p>
+    <!-- CONTENIDO -->
+    <main>
+        <section class="composicion-seccion">
+
+            <!-- TEXTO INTRODUCTORIO -->
+            <div class="intro-croquis">
+                <div class="texto-pequeno">
+                    ANTES DE CONVERTIRSE EN DATOS
+                </div>
+                <h1>
+                    UNA JUGADA<br>
+                    ESCUCHADA
+                </h1>
+                <p>
+                    Una jugada también podía convertirse en voz. En los años 60 y 80 la mayoría no veía el partido: lo escuchaba.
+                </p>
+            </div>
+
+            <!-- VISOR E IMAGEN CENTRADOS CON LA RADIO Y LAS PERILLAS -->
+            <div class="visor-croquis" style="position: relative; display: inline-block; width: 100%; max-width: 650px; text-align: center;">
+                <div style="position: relative; display: inline-block; width: 100%;">
+                    <img 
+                        class="composicion-croquis"
+                        src="./imagenes/radio.png"
+                        alt="Representación de una radio antigua"
+                        style="width: 100%; height: auto; display: block;"
+                    >
+                    <!-- Botón 1 (Perilla izquierda - El Relato) -->
+                    <div class="punto-jugador punto-1 llamar" id="btn-relato" style="position: absolute; left: 63%; top: 61%; width: 24px; height: 24px; background-color: #171717; border-radius: 50%; cursor: pointer; z-index: 10;">
+                        <span class="texto-pulsa" style="position: absolute; top: 26px; left: 50%; transform: translateX(-50%); font-size: 11px; font-weight: bold; color: #171717; white-space: nowrap;">Pulsa</span>
+                    </div>
+
+                    <!-- Botón 2 (Perilla derecha - Selección y límite) -->
+                    <div class="punto-jugador punto-2 llamar" id="btn-seleccion" style="position: absolute; left: 81.5%; top: 61%; width: 24px; height: 24px; background-color: #171717; border-radius: 50%; cursor: pointer; z-index: 10;">
+                        <span class="texto-pulsa" style="position: absolute; top: 26px; left: 50%; transform: translateX(-50%); font-size: 11px; font-weight: bold; color: #171717; white-space: nowrap;">Pulsa</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEXTO RELATOR (Aparece al hacer clic en el botón 1) -->
+            <div class="texto-panagua" id="info-relato">
+                <div class="etiqueta-panagua">
+                    EL RELATO
+                </div>
+                <p>
+                    El relator seleccionaba el ritmo,<br>
+                    el tono y el grito del gol.<br>
+                    El oyente imaginaba el resto.<br><br>
+                    La radio no reproduce la jugada:<br>
+                    la convierte en relato.
+                </p>
+            </div>
+
+            <!-- TEXTO QUÉ SELECCIONA / QUÉ DEJA FUERA (Aparece al hacer clic en el botón 2) -->
+            <div class="texto-balon" id="info-seleccion">
+                <div class="etiqueta-balon">
+                    SELECCIÓN Y LÍMITE
+                </div>
+                <p>
+                    <strong>Qué selecciona:</strong> El relato en tiempo real, el tono emocional, el ruido de la cancha, el momento del gol.
+                </p>
+                <p>
+                    <strong>Qué deja fuera:</strong> Las posiciones exactas, la trayectoria visual del balón, el ángulo del disparo, todo lo que no entra en la voz del relator.
+                </p>
+            </div>
+
         </section>
 
-        <section class="panel-interactivo">
-            <div class="tarjeta-concepto" onclick="this.classList.toggle('activo')">
-                <h3>Goles Esperados (xG) <span>+</span></h3>
-                <p class="detalles">Mide la calidad de cada remate asignándole un valor entre 0 y 1 basado en miles de situaciones históricas similares.</p>
+        <!-- SECCIÓN ARCHIVO -->
+        <section class="archivo-ramiro">
+            <div class="archivo-etiqueta">
+                ARCHIVAR / NARRACIÓN RADIAL
             </div>
-
-            <div class="tarjeta-concepto" onclick="this.classList.toggle('activo')">
-                <h3>Tracking Óptico <span>+</span></h3>
-                <p class="detalles">Sistemas multicámara (como los usados en Catar) que rastrean el balón y hasta 29 puntos del cuerpo de cada jugador en tiempo real.</p>
-            </div>
-
-            <div class="tarjeta-concepto" onclick="this.classList.toggle('activo')">
-                <h3>Mapas de Calor (Heatmaps) <span>+</span></h3>
-                <p class="detalles">Representaciones visuales mediante colores que traducen el volumen de presencia y desplazamiento de un jugador sobre la cancha.</p>
+            <div class="archivo-espacio">
             </div>
         </section>
+
+        <!-- NAVEGACIÓN / SIGUIENTE -->
+        <nav class="navegacion-diapositiva">
+            <button id="comenzar" aria-label="Siguiente diapositiva">
+                <span>→</span>
+            </button>
+        </nav>
     </main>
+
+    <!-- BALÓN VOLADOR (Flotando correctamente en la esquina inferior izquierda) -->
+    <div class="balon-volador" id="balon-disparo" title="¡Dispara hacia los datos!">
+        <img src="./imagenes/balon.png" alt="Balón dibujado">
+    </div>
+
+    <!-- SCRIPT ÚNICO AL FINAL -->
+    <script src="js/croquis.js"></script>
+
 </body>
+
 </html>
