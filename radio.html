@@ -1,109 +1,225 @@
-<style>
-            .contenedor-principal-radio {
-                max-width: 900px;
-                margin: 0 auto;
-                padding: 40px 20px;
-            }
+<!DOCTYPE html>
+<html lang="es">
 
-            .contenedor-radio-perillas {
-                position: relative;
-                display: block;
-                width: 450px;
-                margin: 30px auto;
-            }
+<head>
+    <meta charset="UTF-8">
+    <title>Fulbo — Radio</title>
 
-            .composicion-croquis {
-                width: 100% !important;
-                height: auto !important;
-                display: block;
-            }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-            /* Botón perilla izquierda (Simétrico y centrado en la perilla) */
-            #btn-relato {
-                position: absolute;
-                top: 59%;
-                left: 28%; /* Ajustado simétricamente */
-                width: 22px;
-                height: 22px;
-                background-color: #171717;
-                border-radius: 50%;
-                cursor: pointer;
-                z-index: 10;
-                transform: translate(-50%, -50%);
-            }
+    <link rel="stylesheet" href="css/croquis.css">
+    <style>
+        .contenedor-principal-radio {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
 
-            /* Botón perilla derecha (Simétrico y centrado en la perilla) */
-            #btn-seleccion {
-                position: absolute;
-                top: 59%;
-                left: 77.5%; /* Ajustado simétricamente */
-                width: 22px;
-                height: 22px;
-                background-color: #171717;
-                border-radius: 50%;
-                cursor: pointer;
-                z-index: 10;
-                transform: translate(-50%, -50%);
-            }
+        .contenedor-radio-perillas {
+            position: relative;
+            display: block;
+            width: 450px;
+            margin: 30px auto;
+        }
 
-            .texto-pulsa {
-                position: absolute;
-                top: 26px;
-                left: 50%;
-                transform: translateX(-50%);
-                font-size: 11px;
-                font-weight: bold;
-                color: #171717;
-                text-transform: uppercase;
-                white-space: nowrap;
-            }
+        .composicion-croquis {
+            width: 100% !important;
+            height: auto !important;
+            display: block;
+        }
 
-            /* Balón pequeño en la esquina */
-            .balon-volador {
-                position: fixed;
-                bottom: 25px;
-                left: 25px;
-                width: 40px !important;
-                height: 40px !important;
-                cursor: pointer;
-                z-index: 9999;
-                transition: transform 0.2s ease;
-            }
+        /* Botón perilla izquierda */
+        #btn-relato {
+            position: absolute;
+            top: 59%;
+            left: 28%;
+            width: 22px;
+            height: 22px;
+            background-color: #171717;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transform: translate(-50%, -50%);
+        }
 
-            .balon-volador img {
-                width: 100% !important;
-                height: 100% !important;
-                object-fit: contain;
-                display: block;
-            }
+        /* Botón perilla derecha */
+        #btn-seleccion {
+            position: absolute;
+            top: 59%;
+            left: 77.5%;
+            width: 22px;
+            height: 22px;
+            background-color: #171717;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transform: translate(-50%, -50%);
+        }
 
-            .balon-volador:hover {
-                transform: scale(1.15);
-            }
+        .texto-pulsa {
+            position: absolute;
+            top: 26px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 11px;
+            font-weight: bold;
+            color: #171717;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
 
-            .volando {
-                animation: parabolaImpacto 0.7s cubic-bezier(0.15, 0.85, 0.35, 1) forwards;
-            }
+        /* Balón pequeño en la esquina */
+        .balon-volador {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            width: 40px !important;
+            height: 40px !important;
+            cursor: pointer;
+            z-index: 9999;
+            transition: transform 0.2s ease;
+        }
 
-            @keyframes parabolaImpacto {
-                0% { transform: translate(0, 0) rotate(0deg) scale(1); }
-                100% { transform: translate(60vw, -50vh) rotate(360deg) scale(0.3); opacity: 0; }
-            }
+        .balon-volador img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: contain;
+            display: block;
+        }
 
-            .texto-panagua,
-            .texto-balon {
-                display: none;
-                background: #ffffff;
-                border: 1.5px solid #171717;
-                padding: 20px;
-                margin: 20px auto;
-                max-width: 450px;
-                border-radius: 6px;
-                box-shadow: 4px 4px 0px #171717;
-            }
+        .balon-volador:hover {
+            transform: scale(1.15);
+        }
 
-            .texto-panagua.activo-texto,
-            .texto-balon.activo-texto {
-                display: block;
-            }
-        </style> 
+        .volando {
+            animation: parabolaImpacto 0.7s cubic-bezier(0.15, 0.85, 0.35, 1) forwards;
+        }
+
+        @keyframes parabolaImpacto {
+            0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            100% { transform: translate(60vw, -50vh) rotate(360deg) scale(0.3); opacity: 0; }
+        }
+
+        .texto-panagua,
+        .texto-balon {
+            display: none;
+            background: #ffffff;
+            border: 1.5px solid #171717;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 450px;
+            border-radius: 6px;
+            box-shadow: 4px 4px 0px #171717;
+        }
+
+        .texto-panagua.activo-texto,
+        .texto-balon.activo-texto {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NÚMERO DE SECCIÓN -->
+    <div class="numero-croquis">
+        05
+    </div>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado-croquis">
+        <div class="marca">
+            FULBO
+        </div>
+        <div class="etiqueta">
+            ARCHIVO DE RADIO
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenedor-principal-radio">
+        
+        <!-- TEXTO INTRODUCTORIO -->
+        <section class="intro-croquis">
+            <div class="texto-pequeno">
+                ANTES DE CONVERTIRSE EN DATOS
+            </div>
+            <h1>
+                UNA JUGADA<br>
+                ESCUCHADA
+            </h1>
+            <p>
+                Una jugada también podía convertirse en voz. En los años 60 y 80 la mayoría no veía el partido: lo escuchaba.
+            </p>
+        </section>
+
+        <!-- CONTENEDOR DE LA RADIO, PERILLAS Y TEXTO PULSA -->
+        <div class="contenedor-radio-perillas">
+            <img class="composicion-croquis" src="./imagenes/radio.png" alt="Representación de una radio antigua">
+            
+            <!-- Botón 1 (Perilla izquierda) -->
+            <div class="punto-jugador llamar" id="btn-relato">
+                <span class="texto-pulsa">Pulsa</span>
+            </div>
+
+            <!-- Botón 2 (Perilla derecha) -->
+            <div class="punto-jugador llamar" id="btn-seleccion">
+                <span class="texto-pulsa">Pulsa</span>
+            </div>
+        </div>
+
+        <!-- TEXTO RELATOR -->
+        <div class="texto-panagua" id="info-relato">
+            <div class="etiqueta-panagua">
+                EL RELATO
+            </div>
+            <p>
+                El relator seleccionaba el ritmo,<br>
+                el tono y el grito del gol.<br>
+                El oyente imaginaba el resto.<br><br>
+                La radio no reproduce la jugada:<br>
+                la convierte en relato.
+            </p>
+        </div>
+
+        <!-- TEXTO SELECCIÓN Y LÍMITE -->
+        <div class="texto-balon" id="info-seleccion">
+            <div class="etiqueta-balon">
+                SELECCIÓN Y LÍMITE
+            </div>
+            <p>
+                <strong>Qué selecciona:</strong> El relato en tiempo real, el tono emocional, el ruido de la cancha, el momento del gol.
+            </p>
+            <p>
+                <strong>Qué deja fuera:</strong> Las posiciones exactas, la trayectoria visual del balón, el ángulo del disparo, todo lo que no entra en la voz del relator.
+            </p>
+        </div>
+
+        <!-- SECCIÓN ARCHIVO -->
+        <section class="archivo-ramiro">
+            <div class="archivo-etiqueta">
+                ARCHIVAR / NARRACIÓN RADIAL
+            </div>
+        </section>
+
+        <!-- NAVEGACIÓN / FLECHA -->
+        <nav class="navegacion-diapositiva" style="text-align: center; margin-top: 30px;">
+            <button id="comenzar" aria-label="Siguiente diapositiva" style="width: 45px; height: 45px; border: 1.5px solid #171717; border-radius: 50%; background: transparent; color: #171717; font-size: 18px; cursor: pointer;">
+                <span>→</span>
+            </button>
+        </nav>
+    </main>
+
+    <!-- BALÓN PEQUEÑO COMO BOTÓN INTERACTIVO -->
+    <div class="balon-volador" id="balon-disparo" title="Ir a datos">
+        <img src="./imagenes/balon.png" alt="Balón de fútbol">
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="js/radio.js"></script>
+
+</body>
+
+</html> 
