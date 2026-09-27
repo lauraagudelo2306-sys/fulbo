@@ -1,8 +1,8 @@
-/* Contenedor de la radio más pequeño y controlado */
+/* Contenedor de la radio reducido a un tamaño pequeño y controlado */
 .contenedor-radio-perillas {
     position: relative;
     display: inline-block;
-    max-width: 380px; /* <--- Aquí reducimos el tamaño máximo para que no se vea gigante */
+    max-width: 220px; /* <--- Aquí la bajamos drásticamente para que sea pequeña */
     width: 100%;
     margin: 20px 0;
 }
@@ -18,8 +18,8 @@
     position: absolute;
     top: 61%;
     left: 24.5%;
-    width: 18px; /* Reducido proporcionalmente al nuevo tamaño */
-    height: 18px;
+    width: 12px; /* Más pequeño para ajustarse al tamaño */
+    height: 12px;
     background-color: #171717;
     border-radius: 50%;
     cursor: pointer;
@@ -31,8 +31,8 @@
     position: absolute;
     top: 61%;
     left: 81.5%;
-    width: 18px; /* Reducido proporcionalmente al nuevo tamaño */
-    height: 18px;
+    width: 12px; /* Más pequeño para ajustarse al tamaño */
+    height: 12px;
     background-color: #171717;
     border-radius: 50%;
     cursor: pointer;
@@ -41,10 +41,10 @@
 
 .texto-pulsa {
     position: absolute;
-    top: 22px;
+    top: 15px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 10px;
+    font-size: 8px;
     font-weight: bold;
     color: #171717;
     text-transform: uppercase;
