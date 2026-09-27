@@ -48,17 +48,18 @@
         </section>
 
         <!-- CONTENEDOR DE LA RADIO Y SUS PERILLAS -->
-        <div class="contenedor-radio-perillas">
-            <img class="composicion-croquis" src="./imagenes/radio.png" alt="Representación de una radio antigua" width="280">
+        <div class="contenedor-radio-perillas" style="position: relative; display: block; width: 250px; margin: 20px 0;">
+            <!-- FORZAMOS EL TAMAÑO PEQUEÑO DIRECTAMENTE EN LÍNEA -->
+            <img class="composicion-croquis" src="./imagenes/radio.png" alt="Representación de una radio antigua" style="width: 250px !important; max-width: 250px !important; height: auto !important; display: block;">
             
             <!-- Botón 1 (Perilla izquierda - El Relato) -->
-            <div class="punto-jugador llamar" id="btn-relato">
-                <span class="texto-pulsa">Pulsa</span>
+            <div class="punto-jugador llamar" id="btn-relato" style="position: absolute; top: 61%; left: 24.5%; width: 14px; height: 14px; background-color: #171717; border-radius: 50%; cursor: pointer; z-index: 10;">
+                <span class="texto-pulsa" style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%); font-size: 8px; font-weight: bold; color: #171717; text-transform: uppercase; white-space: nowrap;">Pulsa</span>
             </div>
 
             <!-- Botón 2 (Perilla derecha - Selección y límite) -->
-            <div class="punto-jugador llamar" id="btn-seleccion">
-                <span class="texto-pulsa">Pulsa</span>
+            <div class="punto-jugador llamar" id="btn-seleccion" style="position: absolute; top: 61%; left: 81.5%; width: 14px; height: 14px; background-color: #171717; border-radius: 50%; cursor: pointer; z-index: 10;">
+                <span class="texto-pulsa" style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%); font-size: 8px; font-weight: bold; color: #171717; text-transform: uppercase; white-space: nowrap;">Pulsa</span>
             </div>
         </div>
 
