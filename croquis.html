@@ -3,12 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-
     <title>Fulbo — Croquis</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/croquis.css">
@@ -17,117 +15,92 @@
 <body>
 
     <!-- NÚMERO DE SECCIÓN -->
-
     <div class="numero-croquis">
         04
     </div>
 
-
     <!-- ENCABEZADO -->
-
     <header class="encabezado-croquis">
-
         <div class="marca">
             FULBO
         </div>
-
         <div class="etiqueta">
             ARCHIVO DE JUGADAS
         </div>
-
     </header>
 
-
     <!-- CONTENIDO -->
-
     <main>
-
         <section class="composicion-seccion">
 
-            <!-- TEXTO -->
-
+            <!-- TEXTO INTRODUCTORIO -->
             <div class="intro-croquis">
-
                 <div class="texto-pequeno">
                     DEL PARTIDO AL PAPEL
                 </div>
-
                 <h1>
                     UNA JUGADA<br>
                     DIBUJADA
                 </h1>
-
                 <p>
                     Antes de convertirse en datos, una jugada también podía
                     convertirse en un dibujo.
                 </p>
-
             </div>
-<!-- IMAGEN -->
 
-<div class="visor-croquis">
+            <!-- VISOR E IMAGEN -->
+            <div class="visor-croquis">
+                <img 
+                    class="composicion-croquis"
+                    src="imagenes/composicioncroquis.png"
+                    alt="Representación de una jugada de fútbol"
+                >
+                <div class="punto-jugador punto-1"></div>
+                <div class="punto-jugador punto-2"></div>
+            </div>
 
-    <img 
-        class="composicion-croquis"
-        src="imagenes/composicioncroquis.png"
-        alt="Representación de una jugada de fútbol"
-    >
+            <!-- TEXTO PANAGUA -->
+            <div class="texto-panagua">
+                <div class="etiqueta-panagua">
+                    PANAGUA
+                </div>
+                <p>
+                    Este recorrido muestra una de las cosas que el croquis conserva
+                    de la jugada: la posición y el desplazamiento de un jugador
+                    dentro de una secuencia específica.
+                </p>
+                <p>
+                    Del partido completo, se selecciona un momento y se transforma
+                    en una serie de posiciones sobre el papel.
+                </p>
+            </div>
 
-    <div class="punto-jugador punto-1"></div>
-    <div class="punto-jugador punto-2"></div>
-<div class="texto-panagua">
-
-    <div class="etiqueta-panagua">
-        PANAGUA
-    </div>
-<p>
-    Este recorrido muestra una de las cosas que el croquis conserva
-    de la jugada: la posición y el desplazamiento de un jugador
-    dentro de una secuencia específica.
-</p>
-
-<p>
-    Del partido completo, se selecciona un momento y se transforma
-    en una serie de posiciones sobre el papel.
-</p>
-
-</div>
-</div>
-</div>
-
-<div class="texto-balon">
-
-    <div class="etiqueta-balon">
-        BALÓN
-    </div>
-
-    <p>
-        La trayectoria del balón permite reconstruir el recorrido de la jugada
-        y relacionar las posiciones de los jugadores dentro de la acción.
-    </p>
-
-    <p>
-        El croquis no reproduce el movimiento en tiempo real: lo convierte
-        en una secuencia fija que puede leerse sobre el papel.
-    </p>
-
-</div>
+            <!-- TEXTO BALÓN -->
+            <div class="texto-balon">
+                <div class="etiqueta-balon">
+                    BALÓN
+                </div>
+                <p>
+                    La trayectoria del balón permite reconstruir el recorrido de la jugada
+                    y relacionar las posiciones de los jugadores dentro de la acción.
+                </p>
+                <p>
+                    El croquis no reproduce el movimiento en tiempo real: lo convierte
+                    en una secuencia fija que puede leerse sobre el papel.
+                </p>
+            </div>
 
         </section>
 
-
-      <section class="archivo-ramiro">
-
-    <div class="archivo-etiqueta">
-        ARCHIVO / RAMIRO CORRALES LUGO
-    </div>
-
-    <div class="archivo-espacio">
-
-    </div>
-
-</section>
-
+        <!-- SECCIÓN ARCHIVO RAMIRO -->
+        <section class="archivo-ramiro">
+            <div class="archivo-etiqueta">
+                ARCHIVO / RAMIRO CORRALES LUGO
+            </div>
+            <div class="archivo-espacio">
+            </div>
+        </section>
+    </main>
 
     <script src="js/croquis.js"></script>
 
