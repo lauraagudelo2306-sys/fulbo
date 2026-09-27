@@ -30,84 +30,77 @@
         </div>
     </header>
 
-    <!-- CONTENIDO -->
-    <main>
-        <section class="composicion-seccion">
-
-            <!-- TEXTO INTRODUCTORIO -->
-            <div class="intro-croquis">
-                <div class="texto-pequeno">
-                    ANTES DE CONVERTIRSE EN DATOS
-                </div>
-                <h1>
-                    UNA JUGADA<br>
-                    ESCUCHADA
-                </h1>
-                <p>
-                    Una jugada también podía convertirse en voz. En los años 60 y 80 la mayoría no veía el partido: lo escuchaba.
-                </p>
+    <!-- CONTENIDO PRINCIPAL DISEÑADO EN BLOQUE LIMPIO -->
+    <main class="contenedor-principal-radio">
+        
+        <!-- TEXTO INTRODUCTORIO (Arriba a la izquierda, sin solaparse) -->
+        <section class="intro-croquis">
+            <div class="texto-pequeno">
+                ANTES DE CONVERTIRSE EN DATOS
             </div>
-
-            <!-- VISOR E IMAGEN CENTRADOS CON LA RADIO Y LAS PERILLAS -->
-            <div class="visor-croquis" style="position: relative; display: inline-block; width: 100%; max-width: 650px; text-align: center;">
-                <div style="position: relative; display: inline-block; width: 100%;">
-                    <img 
-                        class="composicion-croquis"
-                        src="./imagenes/radio.png"
-                        alt="Representación de una radio antigua"
-                        style="width: 100%; height: auto; display: block;"
-                    >
-                    <!-- Botón 1 (Perilla izquierda - El Relato) -->
-                    <div class="punto-jugador punto-1 llamar" id="btn-relato" style="position: absolute; left: calc(27% - 12px); top: calc(59% - 12px); width: 24px; height: 24px; background-color: #171717; border-radius: 50%; cursor: pointer; z-index: 10;">
-                        <span class="texto-pulsa" style="position: absolute; top: 26px; left: 50%; transform: translateX(-50%); font-size: 11px; font-weight: bold; color: #171717; white-space: nowrap;">Pulsa</span>
-                    </div>
-
-                    <!-- Botón 2 (Perilla derecha - Selección y límite) -->
-                    <div class="punto-jugador punto-2 llamar" id="btn-seleccion" style="position: absolute; left: calc(73% - 12px); top: calc(59% - 12px); width: 24px; height: 24px; background-color: #171717; border-radius: 50%; cursor: pointer; z-index: 10;">
-                        <span class="texto-pulsa" style="position: absolute; top: 26px; left: 50%; transform: translateX(-50%); font-size: 11px; font-weight: bold; color: #171717; white-space: nowrap;">Pulsa</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TEXTO RELATOR (Aparece al hacer clic en el botón 1) -->
-            <div class="texto-panagua" id="info-relato">
-                <div class="etiqueta-panagua">
-                    EL RELATO
-                </div>
-                <p>
-                    El relator seleccionaba el ritmo,<br>
-                    el tono y el grito del gol.<br>
-                    El oyente imaginaba el resto.<br><br>
-                    La radio no reproduce la jugada:<br>
-                    la convierte en relato.
-                </p>
-            </div>
-
-            <!-- TEXTO QUÉ SELECCIONA / QUÉ DEJA FUERA (Aparece al hacer clic en el botón 2) -->
-            <div class="texto-balon" id="info-seleccion">
-                <div class="etiqueta-balon">
-                    SELECCIÓN Y LÍMITE
-                </div>
-                <p>
-                    <strong>Qué selecciona:</strong> El relato en tiempo real, el tono emocional, el ruido de la cancha, el momento del gol.
-                </p>
-                <p>
-                    <strong>Qué deja fuera:</strong> Las posiciones exactas, la trayectoria visual del balón, el ángulo del disparo, todo lo que no entra en la voz del relator.
-                </p>
-            </div>
-
+            <h1>
+                UNA JUGADA<br>
+                ESCUCHADA
+            </h1>
+            <p>
+                Una jugada también podía convertirse en voz. En los años 60 y 80 la mayoría no veía el partido: lo escuchaba.
+            </p>
         </section>
+
+        <!-- CONTENEDOR DE LA RADIO Y SUS PERILLAS INTERactivas -->
+        <div class="contenedor-radio-perillas">
+            <img 
+                class="composicion-croquis"
+                src="./imagenes/radio.png"
+                alt="Representación de una radio antigua"
+            >
+            
+            <!-- Botón 1 (Perilla izquierda - El Relato) -->
+            <div class="punto-jugador llamar" id="btn-relato">
+                <span class="texto-pulsa">Pulsa</span>
+            </div>
+
+            <!-- Botón 2 (Perilla derecha - Selección y límite) -->
+            <div class="punto-jugador llamar" id="btn-seleccion">
+                <span class="texto-pulsa">Pulsa</span>
+            </div>
+        </div>
+
+        <!-- TEXTO RELATOR (Aparece abajo o al lado al hacer clic) -->
+        <div class="texto-panagua" id="info-relato">
+            <div class="etiqueta-panagua">
+                EL RELATO
+            </div>
+            <p>
+                El relator seleccionaba el ritmo,<br>
+                el tono y el grito del gol.<br>
+                El oyente imaginaba el resto.<br><br>
+                La radio no reproduce la jugada:<br>
+                la convierte en relato.
+            </p>
+        </div>
+
+        <!-- TEXTO SELECCIÓN Y LÍMITE (Aparece al hacer clic en el botón 2) -->
+        <div class="texto-balon" id="info-seleccion">
+            <div class="etiqueta-balon">
+                SELECCIÓN Y LÍMITE
+            </div>
+            <p>
+                <strong>Qué selecciona:</strong> El relato en tiempo real, el tono emocional, el ruido de la cancha, el momento del gol.
+            </p>
+            <p>
+                <strong>Qué deja fuera:</strong> Las posiciones exactas, la trayectoria visual del balón, el ángulo del disparo, todo lo que no entra en la voz del relator.
+            </p>
+        </div>
 
         <!-- SECCIÓN ARCHIVO -->
         <section class="archivo-ramiro">
             <div class="archivo-etiqueta">
                 ARCHIVAR / NARRACIÓN RADIAL
             </div>
-            <div class="archivo-espacio">
-            </div>
         </section>
 
-        <!-- NAVEGACIÓN / SIGUIENTE -->
+        <!-- NAVEGACIÓN / FLECHA -->
         <nav class="navegacion-diapositiva">
             <button id="comenzar" aria-label="Siguiente diapositiva">
                 <span>→</span>
@@ -115,14 +108,14 @@
         </nav>
     </main>
 
-    <!-- BALÓN VOLADOR (Flotando correctamente en la esquina inferior izquierda) -->
-    <div class="balon-volador" id="balon-disparo" title="¡Dispara hacia los datos!">
-        <img src="./imagenes/balon.png" alt="Balón dibujado">
+    <!-- BALÓN PEQUEÑO COMO BOTÓN INTERACTIVO -->
+    <div class="balon-volador" id="balon-disparo" title="Ir a datos">
+        <img src="./imagenes/balon.png" alt="Balón de fútbol">
     </div>
 
-    <!-- SCRIPT ÚNICO AL FINAL -->
+    <!-- SCRIPT -->
     <script src="js/radio.js"></script>
 
 </body>
 
-</html> 
+</html>
