@@ -1,53 +1,109 @@
 /* =========================
-   GLOBOS DE TEXTO EXPLICATIVOS (A LOS LADOS DE LA RADIO)
+   RADIO Y PERILLAS INTERACTIVAS
 ========================= */
 
-/* Estilo base para los dos cuadros de texto explicativos */
-#info-relato,
-#info-seleccion {
-    display: none; /* Ocultos por defecto */
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 230px;
-    background: #fdfcf7;
-    border: 2px solid #171717;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 4px 4px 0px #171717;
-    font-size: 12px;
-    line-height: 1.4;
-    color: #171717;
-    text-align: left;
-    z-index: 300;
+.contenedor-principal-radio {
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    padding: 40px 20px !important;
+    text-align: center !important;
 }
 
-/* Cuadro izquierdo (Aparece a la izquierda de la radio) */
-#info-relato {
-    right: 105%; /* Se ubica volando a la izquierda del contenedor de 320px */
+/* IMPORTANTE: position: relative aquí es la clave para que los textos floten a los lados */
+.contenedor-radio-perillas {
+    position: relative !important;
+    display: inline-block !important;
+    width: 450px !important;
+    margin: 40px auto !important;
 }
 
-/* Cuadro derecho (Aparece a la derecha de la radio) */
-#info-seleccion {
-    left: 105%; /* Se ubica volando a la derecha del contenedor de 320px */
-}
-
-/* Clase que activa el JavaScript para mostrarlos cuando se presiona la perilla */
-#info-relato.activo-texto,
-#info-seleccion.activo-texto {
+.composicion-croquis {
+    width: 100% !important;
+    height: auto !important;
     display: block !important;
 }
 
-/* Ajustes para pantallas pequeñas (por si se ven apretados en celulares) */
-@media (max-width: 768px) {
-    #info-relato,
-    #info-seleccion {
-        position: relative;
-        top: auto;
-        left: auto;
-        right: auto;
-        transform: none;
-        width: 100%;
-        margin-top: 15px;
-    }
+/* Botón perilla izquierda */
+#btn-relato {
+    position: absolute !important;
+    top: 59% !important;
+    left: 28% !important;
+    width: 30px !important;
+    height: 30px !important;
+    background-color: #171717 !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    z-index: 999 !important;
+    transform: translate(-50%, -50%) !important;
 }
+
+/* Botón perilla derecha */
+#btn-seleccion {
+    position: absolute !important;
+    top: 59% !important;
+    left: 77.5% !important;
+    width: 24px !important;
+    height: 24px !important;
+    background-color: #171717 !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    z-index: 999 !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* Texto "Pulsa" sobre las perillas */
+.texto-pulsa {
+    position: absolute !important;
+    top: -24px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    font-size: 10px !important;
+    font-weight: bold !important;
+    color: #171717 !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    background: #f3f1eb !important;
+    padding: 2px 6px !important;
+    border: 1px solid #171717 !important;
+    border-radius: 3px !important;
+    pointer-events: none !important;
+}
+
+/* =========================
+   GLOBOS DE TEXTO FLOTANTES (IZQUIERDA Y DERECHA)
+========================= */
+
+#info-relato,
+#info-seleccion {
+    display: none; /* Ocultos por defecto hasta que se haga clic */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 260px;
+    background: #ffffff;
+    border: 2px solid #171717;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 0px #171717;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #171717;
+    text-align: left;
+    z-index: 1000;
+}
+
+/* El cuadro de la izquierda (Relato) vuela al lado izquierdo de la radio */
+#info-relato {
+    right: 108%; 
+}
+
+/* El cuadro de la derecha (Selección) vuela al lado derecho de la radio */
+#info-seleccion {
+    left: 108%; 
+}
+
+/* Clase que activa el JavaScript para mostrarlos */
+#info-relato.activo-texto,
+#info-seleccion.activo-texto {
+    display: block !important;
+} 
