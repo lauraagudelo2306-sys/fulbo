@@ -79,20 +79,21 @@
 ========================= */
 
 .balon-volador {
-    position: fixed !important;
-    bottom: 25px !important;
-    left: 30px !important;
-    width: 30px !important;  /* Forzado a pequeño y delicado */
-    height: 30px !important;
+    position: fixed;
+    bottom: 25px;
+    left: 30px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 9999; /* Asegura que esté por encima de todo */
     transition: transform 0.3s ease;
 }
 
 .balon-volador img {
-    width: 100% !important;
-    height: 100% !important;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+    display: block;
 }
 
 .balon-volador:hover {
@@ -115,4 +116,4 @@
         transform: translate(85vw, -80vh) scale(0.8) rotate(540deg);
         opacity: 0;
     }
-}
+} 
