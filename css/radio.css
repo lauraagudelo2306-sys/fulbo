@@ -1,0 +1,606 @@
+
+/* =========================
+   FULBO — ARCHIVO DE RADIO
+========================= */
+
+body {
+    margin: 0;
+    background: #f3f1eb;
+    color: #171717;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+
+/* =========================
+   RADIO
+========================= */
+
+.contenedor-principal-radio {
+    width: 100%;
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    padding: 100px 40px 40px;
+}
+
+.contenedor-radio-perillas {
+    position: relative;
+
+    width: 700px;
+    max-width: 72vw;
+
+    margin: 20px auto 0;
+
+    flex-shrink: 0;
+
+    transition: transform 2s ease;
+    z-index: 10;
+}
+
+.contenedor-radio-perillas.mover-radio {
+    transform: translateX(-40%);
+}
+
+.radio-imagen {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================
+   PERILLAS
+========================= */
+
+.perilla {
+    position: absolute;
+
+    border: none;
+    padding: 0;
+
+    background: #171717;
+    border-radius: 50%;
+
+    cursor: pointer;
+    z-index: 20;
+
+    transform: translate(-50%, -50%);
+}
+
+
+.perilla:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+
+.perilla-relato {
+    top: 59%;
+    left: 28%;
+
+    width: 30px;
+    height: 30px;
+}
+
+
+.perilla-seleccion {
+    top: 61%;
+    left: 73.5%;
+
+    width: 24px;
+    height: 24px;
+}
+
+
+/* =========================
+   ELEMENTOS QUE TODAVÍA
+   NO QUEREMOS MOSTRAR
+========================= */
+
+.estado-radio,
+.continuar-radio {
+    display: none;
+}
+
+
+/* =========================
+   ESTADO DE LA FRECUENCIA
+========================= */
+
+.estado-radio {
+    position: absolute !important;
+
+    display: none;
+
+    left: 50% !important;
+    right: auto !important;
+    top: calc(100% + 18px) !important;
+
+    transform: translateX(-50%) !important;
+
+    width: max-content !important;
+    max-width: 90vw !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    text-align: center !important;
+
+    font-family: "Space Grotesk", sans-serif !important;
+    font-size: 11px !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+
+    color: #171717 !important;
+
+    z-index: 30 !important;
+}
+
+
+.frecuencia-radio {
+    position: absolute;
+
+    left: 50%;
+    top: calc(100% + 18px);
+
+    transform: translateX(-50%);
+
+    width: max-content;
+
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+
+    color: #171717;
+
+    display: none;
+
+    z-index: 30;
+}
+
+
+/* =========================
+   RECONSTRUCCIÓN DE LA JUGADA
+========================= */
+.reconstruccion-jugada {
+    position: absolute;
+
+    left: calc(50% + 80px);
+    top: 50%;
+
+    width: 500px;
+    max-width: 40vw;
+    min-height: 300px;
+
+    padding: 50px 40px;
+    box-sizing: border-box;
+
+    border: 1px solid #171717;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translate(30px, -50%);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease,
+        visibility 0s linear 1.2s;
+
+    z-index: 20;
+}
+
+.reconstruccion-jugada.activa {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translate(0, -50%);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease,
+        visibility 0s linear 0s;
+}
+
+/* =========================
+   SECUENCIA
+========================= */
+
+.secuencia-jugada {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    gap: 8px;
+
+    opacity: 1;
+
+    transition: opacity 0.6s ease;
+}
+
+
+/* =========================
+   PALABRAS
+========================= */
+
+.paso-jugada {
+    font-size: 30px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    opacity: 0;
+
+    transform: translateY(8px);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+
+.paso-jugada.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   FLECHAS
+========================= */
+
+.flecha-jugada {
+    font-size: 24px;
+
+    line-height: 1;
+
+    opacity: 0;
+
+    transform: translateY(6px);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+
+.flecha-jugada.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   GOOOL
+========================= */
+
+.paso-gol {
+    display: flex;
+
+    gap: 2px;
+
+    font-size: 42px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    opacity: 0;
+}
+
+
+.paso-gol span {
+    display: inline-block;
+
+    opacity: 0;
+
+    transform: translateY(12px);
+}
+
+
+.paso-gol.visible {
+    opacity: 1;
+}
+
+
+/* =========================
+   ANIMACIÓN LETRA POR LETRA
+========================= */
+
+.paso-gol.visible span:nth-child(1) {
+    animation: letraGol 0.35s ease forwards;
+
+    animation-delay: 0s;
+}
+
+
+.paso-gol.visible span:nth-child(2) {
+    animation: letraGol 0.35s ease forwards;
+
+    animation-delay: 0.08s;
+}
+
+
+.paso-gol.visible span:nth-child(3) {
+    animation: letraGol 0.35s ease forwards;
+
+    animation-delay: 0.16s;
+}
+
+
+.paso-gol.visible span:nth-child(4) {
+    animation: letraGol 0.35s ease forwards;
+
+    animation-delay: 0.24s;
+}
+
+
+.paso-gol.visible span:nth-child(5) {
+    animation: letraGol 0.35s ease forwards;
+
+    animation-delay: 0.32s;
+}
+
+
+@keyframes letraGol {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   DESVANECER LA SECUENCIA
+========================= */
+
+.secuencia-jugada.oculta {
+    opacity: 0;
+}
+
+
+/* =========================
+   TEXTO FINAL
+========================= */
+
+.texto-radio-final {
+    position: absolute;
+
+    top: 30%;
+    left: 10%;
+
+    width: calc(100% - 80px);
+    max-width: 500px;
+
+    margin: 0;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform: translate(-50%, calc(-50% + 8px));
+
+    pointer-events: none;
+}
+
+.texto-radio-final.visible {
+    display: block;
+
+    animation: aparecerTextoRadio 0.7s ease forwards;
+}
+
+.titulo-radio-final {
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+
+.texto-radio-final p {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================
+   APARICIÓN DEL TEXTO FINAL
+========================= */
+
+@keyframes aparecerTextoRadio {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+.titulo-reconstruccion {
+    position: absolute;
+    left: calc(50% + 80px);
+    top: calc(50% - 180px);
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #171717;
+
+    opacity: 0;
+    transform: translate(30px, 10px);
+
+    transition:
+        opacity 1.8s ease,
+        transform 1.8s ease;
+
+    z-index: 20;
+}
+
+.titulo-reconstruccion.activa {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* =========================
+   LO QUE NO SE ESCUCHA
+========================= */
+
+.capa-omitida {
+    position: absolute;
+
+    left: calc(50% + 80px);
+    top: 50%;
+
+    width: 500px;
+    max-width: 40vw;
+    min-height: 300px;
+
+    padding: 45px 40px;
+    box-sizing: border-box;
+
+    border: 1px solid #171717;
+    background: #f3f1eb;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translate(30px, -50%);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0s linear 0.8s;
+
+    z-index: 30;
+}
+
+.capa-omitida.activo-omitido {
+    display: block;
+
+    opacity: 1;
+    visibility: visible;
+
+    transform: translate(0, -50%);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0s linear 0s;
+}
+
+.titulo-omitido {
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    margin-bottom: 40px;
+}
+
+.elemento-omitido {
+    margin-bottom: 28px;
+}
+
+.elemento-omitido > span {
+    display: block;
+
+    font-size: 11px;
+    letter-spacing: 1.5px;
+
+    margin-bottom: 10px;
+}
+
+
+/* POSICIONES */
+
+.puntos-espacio {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.puntos-espacio i {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #171717;
+}
+
+
+/* ESPACIO */
+
+.linea-espacio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.linea-espacio hr {
+    flex: 1;
+
+    border: 0;
+    border-top: 1px solid #171717;
+}
+
+.linea-espacio b {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+/* TRAYECTORIA */
+
+.linea-trayectoria {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.linea-trayectoria i {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #171717;
+}
+
+.linea-trayectoria span {
+    font-size: 18px;
+}
