@@ -36,12 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (balonDisparo) {
         balonDisparo.addEventListener('click', () => {
-            // Evita múltiples clics si ya está volando
             if (balonDisparo.classList.contains('volando')) return;
             
             balonDisparo.classList.add('volando');
             
-            // Espera a que termine la animación de impacto (850ms) y cambia de página
             setTimeout(() => {
                 window.location.href = 'datos.html'; 
             }, 850);
