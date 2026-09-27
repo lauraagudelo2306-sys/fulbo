@@ -1,15 +1,26 @@
-/* Contenedor de la radio reducido a un tamaño pequeño y controlado */
+/* =========================
+   RADIO: TAMAÑO PEQUEÑO Y CONTROLADO
+========================= */
+
+.contenedor-principal-radio {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Contenedor estricto para la radio */
 .contenedor-radio-perillas {
     position: relative;
-    display: inline-block;
-    max-width: 220px; /* <--- Aquí la bajamos drásticamente para que sea pequeña */
-    width: 100%;
+    display: block;
+    width: 260px; /* Ancho fijo pequeño para que no crezca más de cuenta */
     margin: 20px 0;
 }
 
+/* Forzamos a que la imagen respete el tamaño pequeño */
 .composicion-croquis {
-    width: 100%;
-    height: auto;
+    width: 100% !important;
+    max-width: 260px !important;
+    height: auto !important;
     display: block;
 }
 
@@ -18,7 +29,7 @@
     position: absolute;
     top: 61%;
     left: 24.5%;
-    width: 12px; /* Más pequeño para ajustarse al tamaño */
+    width: 12px;
     height: 12px;
     background-color: #171717;
     border-radius: 50%;
@@ -31,7 +42,7 @@
     position: absolute;
     top: 61%;
     left: 81.5%;
-    width: 12px; /* Más pequeño para ajustarse al tamaño */
+    width: 12px;
     height: 12px;
     background-color: #171717;
     border-radius: 50%;
@@ -41,7 +52,7 @@
 
 .texto-pulsa {
     position: absolute;
-    top: 15px;
+    top: 14px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 8px;
@@ -49,4 +60,4 @@
     color: #171717;
     text-transform: uppercase;
     white-space: nowrap;
-} 
+}
