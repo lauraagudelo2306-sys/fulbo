@@ -82,20 +82,20 @@
 
 .balon-volador {
     position: fixed;
-    bottom: 30px;
+    bottom: 25px;
     left: 30px;
-    width: 60px; /* Tamaño más visible y adecuado */
-    height: 60px;
+    width: 34px;  /* ¡Mucho más pequeño y delicado! */
+    height: 34px;
     cursor: pointer;
     z-index: 1000;
     transition: transform 0.3s ease;
 }
 
 .balon-volador:hover {
-    transform: scale(1.15); /* Efecto de que se "amplía" un poco antes de patearlo */
+    transform: scale(1.15); /* Sutil efecto al pasar el cursor */
 }
 
-/* Animación de la parábola que se estrella en la esquina */
+/* Clase que activa la parábola con JavaScript */
 .volando {
     animation: parabolaImpacto 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
@@ -105,10 +105,10 @@
         transform: translate(0, 0) rotate(0deg);
     }
     60% {
-        transform: translate(45vw, -60vh) rotate(360deg); /* Sube en curva hacia el centro-arriba */
+        transform: translate(45vw, -60vh) rotate(360deg);
     }
     100% {
-        transform: translate(85vw, -80vh) scale(0.8) rotate(540deg); /* Se estrella contra la esquina superior derecha */
+        transform: translate(85vw, -80vh) scale(0.8) rotate(540deg);
         opacity: 0;
     }
 }
