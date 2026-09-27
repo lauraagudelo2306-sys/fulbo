@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     // 1. LÓGICA DE LOS BOTONES DE LA RADIO
     const btnRelato = document.getElementById('btn-relato');
@@ -41,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Espera a que termine la animación del impacto (750ms) y cambia a la página de datos
             setTimeout(() => {
-                window.location.href = 'datos.html'; // Cambia esto por el nombre exacto de tu archivo de la siguiente página
+                window.location.href = 'datos.html'; 
             }, 750);
         });
     }
