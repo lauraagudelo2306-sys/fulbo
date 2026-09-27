@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const infoRelato = document.getElementById('info-relato');
     const infoSeleccion = document.getElementById('info-seleccion');
 
-    // Ocultar textos al cargar la página por seguridad
     if (infoRelato) infoRelato.style.display = 'none';
     if (infoSeleccion) infoSeleccion.style.display = 'none';
 
@@ -33,18 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. LÓGICA DEL BALÓN VOLADOR EN PARÁBOLA (CAMBIO DE PÁGINA)
+    // 2. LÓGICA DEL BALÓN QUE SE ESTRELLA Y VA A DATOS
     const balonDisparo = document.getElementById('balon-disparo');
 
     if (balonDisparo) {
         balonDisparo.addEventListener('click', () => {
-            // Activa la animación CSS de la parábola
             balonDisparo.classList.add('volando');
             
-            // Espera a que termine la animación (0.75 segundos) y cambia de página
+            // Espera a que termine la animación del impacto (750ms) y cambia a la página de datos
             setTimeout(() => {
-                // REEMPLAZA 'siguiente-pagina.html' por el nombre real de tu archivo HTML siguiente
-                window.location.href = 'siguiente-pagina.html'; 
+                window.location.href = 'datos.html'; // Cambia esto por el nombre exacto de tu archivo de la siguiente página
             }, 750);
         });
     }
