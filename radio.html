@@ -1,118 +1,17 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Fulbo — Radio</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/croquis.css">
-</head>
-
-<body>
-
-    <!-- NÚMERO DE SECCIÓN -->
-    <div class="numero-croquis">
-        05
-    </div>
-
-    <!-- ENCABEZADO -->
-    <header class="encabezado-croquis">
-        <div class="marca">
-            FULBO
-        </div>
-        <div class="etiqueta">
-            ARCHIVO DE RADIO
-        </div>
-    </header>
-
-    <!-- CONTENIDO -->
-    <main>
-        <section class="composicion-seccion">
-
-            <!-- TEXTO INTRODUCTORIO -->
-            <div class="intro-croquis">
-                <div class="texto-pequeno">
-                    ANTES DE CONVERTIRSE EN DATOS
-                </div>
-                <h1>
-                    UNA JUGADA<br>
-                    ESCUCHADA
-                </h1>
-                <p>
-                    Una jugada también podía convertirse en voz. En los años 60 y 80 la mayoría no veía el partido: lo escuchaba.
-                </p>
+<!-- VISOR E IMAGEN CON BOTONES INTERACTIVOS (Tus perillas de la radio) -->
+        <div class="visor-croquis" style="position: relative; display: inline-block;">
+            <img 
+                class="composicion-croquis"
+                src="./imagenes/radio.png"
+                alt="Representación de una radio antigua"
+            >
+            <!-- Botón 1 (Perilla izquierda - El Relato) -->
+            <div class="punto-jugador punto-1 llamar" id="btn-relato" style="position: absolute; left: 31%; top: 58%; cursor: pointer;">
+                <span class="texto-pulsa" style="position: absolute; top: 18px; left: 50%; transform: translateX(-50%); font-size: 10px;">Pulsa</span>
             </div>
 
-            <!-- VISOR E IMAGEN CON BOTONES INTERACTIVOS (Tus perillas de la radio) -->
-            <div class="visor-croquis" style="position: relative; display: inline-block;">
-                <img 
-                    class="composicion-croquis"
-                    src="./imagenes/radio.png"
-                    alt="Representación de una radio antigua"
-                >
-                <!-- Botón 1 (Perilla izquierda - El Relato) -->
-                <div class="punto-jugador punto-1 llamar" id="btn-relato" style="position: absolute; left: 28%; top: 60%; cursor: pointer;">
-                    <span class="texto-pulsa" style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); font-size: 10px;">Pulsa</span>
-                </div>
-
-                <!-- Botón 2 (Perilla derecha - Selección y límite) -->
-                <div class="punto-jugador punto-2 llamar" id="btn-seleccion" style="position: absolute; left: 78%; top: 58%; cursor: pointer;">
-                    <span class="texto-pulsa" style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); font-size: 10px;">Pulsa</span>
-                </div>
+            <!-- Botón 2 (Perilla derecha - Selección y límite) -->
+            <div class="punto-jugador punto-2 llamar" id="btn-seleccion" style="position: absolute; left: 56%; top: 58%; cursor: pointer;">
+                <span class="texto-pulsa" style="position: absolute; top: 18px; left: 50%; transform: translateX(-50%); font-size: 10px;">Pulsa</span>
             </div>
-
-            <!-- TEXTO RELATOR (Aparece al hacer clic en el botón 1) -->
-            <div class="texto-panagua" id="info-relato">
-                <div class="etiqueta-panagua">
-                    EL RELATO
-                </div>
-                <p>
-                    El relator seleccionaba el ritmo,<br>
-                    el tono y el grito del gol.<br>
-                    El oyente imaginaba el resto.<br><br>
-                    La radio no reproduce la jugada:<br>
-                    la convierte en relato.
-                </p>
-            </div>
-
-            <!-- TEXTO QUÉ SELECCIONA / QUÉ DEJA FUERA (Aparece al hacer clic en el botón 2) -->
-            <div class="texto-balon" id="info-seleccion">
-                <div class="etiqueta-balon">
-                    SELECCIÓN Y LÍMITE
-                </div>
-                <p>
-                    <strong>Qué selecciona:</strong> El relato en tiempo real, el tono emocional, el ruido de la cancha, el momento del gol.
-                </p>
-                <p>
-                    <strong>Qué deja fuera:</strong> Las posiciones exactas, la trayectoria visual del balón, el ángulo del disparo, todo lo que no entra en la voz del relator.
-                </p>
-            </div>
-
-        </section>
-
-        <!-- SECCIÓN ARCHIVO -->
-        <section class="archivo-ramiro">
-            <div class="archivo-etiqueta">
-                ARCHIVAR / NARRACIÓN RADIAL
-            </div>
-            <div class="archivo-espacio">
-            </div>
-        </section>
-
-        <!-- NAVEGACIÓN / SIGUIENTE -->
-        <nav class="navegacion-diapositiva">
-            <button id="comenzar" aria-label="Siguiente diapositiva">
-                <span>→</span>
-            </button>
-        </nav>
-    </main>
-
-    <script src="js/croquis.js"></script>
-
-</body>
-
-</html>
+        </div> 
