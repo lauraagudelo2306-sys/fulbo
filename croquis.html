@@ -31,9 +31,10 @@
 
     <!-- CONTENIDO -->
     <main>
+
         <section class="composicion-seccion">
 
-            <!-- TEXTO INTRODUCTORIO -->
+            <!-- TEXTO -->
             <div class="intro-croquis">
                 <div class="texto-pequeno">
                     DEL PARTIDO AL PAPEL
@@ -48,7 +49,7 @@
                 </p>
             </div>
 
-            <!-- VISOR E IMAGEN -->
+            <!-- IMAGEN -->
             <div class="visor-croquis">
                 <img 
                     class="composicion-croquis"
@@ -57,25 +58,23 @@
                 >
                 <div class="punto-jugador punto-1"></div>
                 <div class="punto-jugador punto-2"></div>
-            </div>
 
-            <!-- TEXTO PANAGUA -->
-            <div class="texto-panagua">
-                <div class="etiqueta-panagua">
-                    PANAGUA
+                <div class="texto-panagua">
+                    <div class="etiqueta-panagua">
+                        PANAGUA
+                    </div>
+                    <p>
+                        Este recorrido muestra una de las cosas que el croquis conserva
+                        de la jugada: la posición y el desplazamiento de un jugador
+                        dentro de una secuencia específica.
+                    </p>
+                    <p>
+                        Del partido completo, se selecciona un momento y se transforma
+                        en una serie de posiciones sobre el papel.
+                    </p>
                 </div>
-                <p>
-                    Este recorrido muestra una de las cosas que el croquis conserva
-                    de la jugada: la posición y el desplazamiento de un jugador
-                    dentro de una secuencia específica.
-                </p>
-                <p>
-                    Del partido completo, se selecciona un momento y se transforma
-                    en una serie de posiciones sobre el papel.
-                </p>
             </div>
 
-            <!-- TEXTO BALÓN -->
             <div class="texto-balon">
                 <div class="etiqueta-balon">
                     BALÓN
@@ -92,7 +91,6 @@
 
         </section>
 
-        <!-- SECCIÓN ARCHIVO RAMIRO -->
         <section class="archivo-ramiro">
             <div class="archivo-etiqueta">
                 ARCHIVO / RAMIRO CORRALES LUGO
@@ -101,12 +99,10 @@
             </div>
         </section>
 
-        <!-- NAVEGACIÓN / ESQUINA INFERIOR DERECHA -->
+        <!-- NAVEGACIÓN / ESQUINA INFERIOR DERECHA (Megáfono y enlace a radio.html) -->
         <nav class="navegacion-diapositiva" style="position: fixed !important; bottom: 25px !important; right: 25px !important; left: auto !important; top: auto !important; z-index: 9999 !important; display: flex !important; flex-direction: column !important; align-items: flex-end !important; gap: 6px !important; background: transparent !important;">
-            <!-- Imagen del megáfono -->
             <img src="imagenes/megafono.png" alt="Megáfono" style="width: 90px !important; height: auto !important; display: block !important;">
             
-            <!-- Enlace interactivo que lleva a radio.html -->
             <a href="radio.html" aria-label="Ir a sección de radio" style="text-decoration: none !important; display: inline-flex !important; align-items: center !important; gap: 8px !important; cursor: pointer !important;">
                 <span style="font-family: 'Space Grotesk', sans-serif !important; font-size: 13px !important; color: #111 !important; font-weight: 500 !important; white-space: nowrap !important;">los que no lo veían...</span>
                 <button id="comenzar" style="position: static !important; background: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important; margin: 0 !important; cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: center !important;">
@@ -114,13 +110,11 @@
                 </button>
             </a>
         </nav>
+
     </main>
 
     <script src="js/croquis.js"></script>
 
-</body>
-
-</html>
 </body>
 
 </html>
