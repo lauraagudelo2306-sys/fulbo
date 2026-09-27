@@ -36,12 +36,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (balonDisparo) {
         balonDisparo.addEventListener('click', () => {
+            // Evita múltiples clics si ya está volando
+            if (balonDisparo.classList.contains('volando')) return;
+            
             balonDisparo.classList.add('volando');
             
-            // Espera a que termine la animación del impacto (750ms) y cambia a la página de datos
+            // Espera a que termine la animación de impacto (800ms) y cambia de página
             setTimeout(() => {
-                window.location.href = 'datos.html'; 
-            }, 750);
+                window.location.href = 'datos.html'; // Cambia por el nombre exacto de tu siguiente página si es diferente
+            }, 800);
         });
     }
 });
+
