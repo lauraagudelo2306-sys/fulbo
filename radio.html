@@ -47,19 +47,26 @@
                 </p>
             </div>
 
-            <!-- VISOR E IMAGEN CON PUNTOS INTERACTIVOS -->
-            <div class="visor-croquis">
+            <!-- VISOR E IMAGEN CON BOTONES INTERACTIVOS (Tus perillas de la radio) -->
+            <div class="visor-croquis" style="position: relative; display: inline-block;">
                 <img 
                     class="composicion-croquis"
                     src="imagenes/radio.png"
                     alt="Representación de una radio antigua"
                 >
-                <div class="punto-jugador punto-1"></div>
-                <div class="punto-jugador punto-2"></div>
+                <!-- Botón 1 (Perilla izquierda - El Relato) -->
+                <div class="punto-jugador punto-1 llamar" id="btn-relato" style="position: absolute; left: 28%; top: 60%; cursor: pointer;">
+                    <span class="texto-pulsa" style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); font-size: 10px;">Pulsa</span>
+                </div>
+
+                <!-- Botón 2 (Perilla derecha - Selección y límite) -->
+                <div class="punto-jugador punto-2 llamar" id="btn-seleccion" style="position: absolute; left: 78%; top: 58%; cursor: pointer;">
+                    <span class="texto-pulsa" style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); font-size: 10px;">Pulsa</span>
+                </div>
             </div>
 
-            <!-- TEXTO RELATOR (Con el texto que pediste) -->
-            <div class="texto-panagua">
+            <!-- TEXTO RELATOR (Aparece al hacer clic en el botón 1) -->
+            <div class="texto-panagua" id-info="relato">
                 <div class="etiqueta-panagua">
                     EL RELATO
                 </div>
@@ -72,8 +79,8 @@
                 </p>
             </div>
 
-            <!-- TEXTO QUÉ SELECCIONA / QUÉ DEJA FUERA -->
-            <div class="texto-balon">
+            <!-- TEXTO QUÉ SELECCIONA / QUÉ DEJA FUERA (Aparece al hacer clic en el botón 2) -->
+            <div class="texto-balon" id-info="seleccion">
                 <div class="etiqueta-balon">
                     SELECCIÓN Y LÍMITE
                 </div>
@@ -90,7 +97,7 @@
         <!-- SECCIÓN ARCHIVO -->
         <section class="archivo-ramiro">
             <div class="archivo-etiqueta">
-                ARCHIVO / NARRACIÓN RADIAL
+                ARCHIVAR / NARRACIÓN RADIAL
             </div>
             <div class="archivo-espacio">
             </div>
