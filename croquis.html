@@ -101,13 +101,16 @@
             </div>
         </section>
 
-        <!-- NAVEGACIÓN / ESQUINA INFERIOR DERECHA (Megáfono, texto y botón) -->
-        <nav class="navegacion-diapositiva" style="position: fixed !important; bottom: 20px !important; right: 20px !important; left: auto !important; top: auto !important; z-index: 9999 !important; display: flex; flex-direction: column; align-items: flex-end; gap: 6px;">
-            <img src="imagenes/megafono.png" alt="Ilustración de sonido" style="width: 90px; height: auto;">
-            <div style="display: flex; align-items: center; gap: 8px;">
-                <span style="font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: #111; font-weight: 500;">los que no lo veían...</span>
-                <a href="radio.html" aria-label="Siguiente diapositiva">
-                    <button id="comenzar" style="position: static !important;">
+        <!-- NAVEGACIÓN / ESQUINA INFERIOR DERECHA (Megáfono, texto y botón alineados) -->
+        <nav class="navegacion-diapositiva" style="position: fixed !important; bottom: 25px !important; right: 25px !important; left: auto !important; top: auto !important; z-index: 9999 !important; display: flex !important; flex-direction: column !important; align-items: flex-end !important; gap: 8px !important; background: transparent !important;">
+            <!-- Imagen del megáfono -->
+            <img src="imagenes/megafono.png" alt="Megáfono" style="width: 100px !important; height: auto !important; display: block !important; margin-bottom: 2px !important;">
+            
+            <!-- Contenedor inferior con el texto y la flecha -->
+            <div style="display: flex !important; align-items: center !important; gap: 10px !important;">
+                <span style="font-family: 'Space Grotesk', sans-serif !important; font-size: 13px !important; color: #111 !important; font-weight: 500 !important; white-space: nowrap !important;">los que no lo veían...</span>
+                <a href="radio.html" aria-label="Siguiente diapositiva" style="text-decoration: none !important;">
+                    <button id="comenzar" style="position: static !important; display: flex !important; align-items: center !important; justify-content: center !important; cursor: pointer !important;">
                         <span>→</span>
                     </button>
                 </a>
