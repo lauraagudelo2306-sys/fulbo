@@ -35,8 +35,8 @@
             position: absolute;
             top: 59%;
             left: 28%;
-            width: 22px;
-            height: 22px;
+            width: 28px;
+            height: 28px;
             background-color: #171717;
             border-radius: 50%;
             cursor: pointer;
@@ -60,14 +60,17 @@
 
         .texto-pulsa {
             position: absolute;
-            top: 26px;
+            top: -20px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 11px;
+            font-size: 10px;
             font-weight: bold;
             color: #171717;
             text-transform: uppercase;
             white-space: nowrap;
+            background: rgba(243, 241, 235, 0.9);
+            padding: 1px 4px;
+            border-radius: 2px;
         }
 
         /* Balón pequeño en la esquina */
@@ -160,12 +163,12 @@
             <img class="composicion-croquis" src="./imagenes/radio.png" alt="Representación de una radio antigua">
             
             <!-- Botón 1 (Perilla izquierda) -->
-            <div class="punto-jugador llamar" id="btn-relato">
+            <div id="btn-relato">
                 <span class="texto-pulsa">Pulsa</span>
             </div>
 
             <!-- Botón 2 (Perilla derecha) -->
-            <div class="punto-jugador llamar" id="btn-seleccion">
+            <div id="btn-seleccion">
                 <span class="texto-pulsa">Pulsa</span>
             </div>
         </div>
