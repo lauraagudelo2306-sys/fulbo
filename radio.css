@@ -1,5 +1,3 @@
-
-
 /* =========================
    SECCIÓN RADIO ANIMADA
 ========================= */
@@ -81,14 +79,20 @@
 ========================= */
 
 .balon-volador {
-    position: fixed;
-    bottom: 25px;
-    left: 30px;
-    width: 34px;  /* ¡Mucho más pequeño y delicado! */
-    height: 34px;
+    position: fixed !important;
+    bottom: 25px !important;
+    left: 30px !important;
+    width: 30px !important;  /* Forzado a pequeño y delicado */
+    height: 30px !important;
     cursor: pointer;
     z-index: 1000;
     transition: transform 0.3s ease;
+}
+
+.balon-volador img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
 }
 
 .balon-volador:hover {
