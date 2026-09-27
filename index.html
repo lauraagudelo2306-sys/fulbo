@@ -1,138 +1,115 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <title>Fulbo</title>
+    <title>Fulbo — Croquis</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/croquis.css">
 </head>
 
 <body>
 
-    <div class="inicio">
+    <!-- NÚMERO DE SECCIÓN -->
+    <div class="numero-croquis">
+        04
+    </div>
 
-        <div class="numero">01</div>
-
-        <div class="titulo">FULBO</div>
-
-        <div class="subtitulo">
-            una representación<br>
-            del fútbol
+    <!-- ENCABEZADO -->
+    <header class="encabezado-croquis">
+        <div class="marca">
+            FULBO
         </div>
-
-        <button id="comenzar">
-            <span>→</span>
-            COMENZAR EL PARTIDO
-        </button>
-
-    </div>
-
-
-    <button id="saltar">→</button>
-
-
-    <video id="partido">
-        <source src="videos/partidoo.mp4" type="video/mp4">
-    </video>
-
-
-    <audio id="sonidoInterferencia" src="sonidos/interferenciaa.wav"></audio>
-
-    <audio id="sonidoGol" src="sonidos/sonido.wav"></audio>
-
-
-    <div id="interferencia"></div>
-
-
-    <div id="pregunta">
-        Si no podemos ver el acontecimiento, ¿Cómo podemos volver a él?
-    </div>
-
-
-    <div id="gol">
-
-        <span>G</span>
-        <span>O</span>
-        <span>O</span>
-        <span>O</span>
-        <span>O</span>
-        <span>O</span>
-        <span>O</span>
-        <span>L</span>
-
-    </div>
-
-
-    <div id="cancha">
-
-        <div class="linea-medio"></div>
-
-        <div class="circulo-medio"></div>
-
-        <div class="area area-izquierda"></div>
-
-        <div class="area area-derecha"></div>
-
-        <div class="portería porteria-izquierda"></div>
-
-        <div class="portería porteria-derecha"></div>
-
-
-        <div class="jugador jugador-1"></div>
-
-        <div class="jugador jugador-2"></div>
-
-        <div class="jugador jugador-3"></div>
-
-        <div class="jugador jugador-4"></div>
-
-        <div class="jugador jugador-5"></div>
-
-    </div>
-
-
-    <img id="personaje" src="imagenes/jugador.png">
-
-
-    <!-- =========================
-         SECCIÓN 03
-    ========================= -->
-
-    <div id="introduccion">
-
-        <div class="numero-intro">
-            03
+        <div class="etiqueta">
+            ARCHIVO DE JUGADAS
         </div>
+    </header>
 
-        <div class="titulo-intro">
-            ¿CÓMO RECORDAMOS LA JUGADA?
+    <!-- CONTENIDO -->
+    <main>
+        <section class="composicion-seccion">
+
+            <!-- TEXTO INTRODUCTORIO -->
+            <div class="intro-croquis">
+                <div class="texto-pequeno">
+                    DEL PARTIDO AL PAPEL
+                </div>
+                <h1>
+                    UNA JUGADA<br>
+                    DIBUJADA
+                </h1>
+                <p>
+                    Antes de convertirse en datos, una jugada también podía
+                    convertirse en un dibujo.
+                </p>
+            </div>
+
+            <!-- VISOR E IMAGEN -->
+            <div class="visor-croquis">
+                <img 
+                    class="composicion-croquis"
+                    src="imagenes/composicioncroquis.png"
+                    alt="Representación de una jugada de fútbol"
+                >
+                <div class="punto-jugador punto-1"></div>
+                <div class="punto-jugador punto-2"></div>
+            </div>
+
+            <!-- TEXTO PANAGUA -->
+            <div class="texto-panagua">
+                <div class="etiqueta-panagua">
+                    PANAGUA
+                </div>
+                <p>
+                    Este recorrido muestra una de las cosas que el croquis conserva
+                    de la jugada: la posición y el desplazamiento de un jugador
+                    dentro de una secuencia específica.
+                </p>
+                <p>
+                    Del partido completo, se selecciona un momento y se transforma
+                    en una serie de posiciones sobre el papel.
+                </p>
+            </div>
+
+            <!-- TEXTO BALÓN -->
+            <div class="texto-balon">
+                <div class="etiqueta-balon">
+                    BALÓN
+                </div>
+                <p>
+                    La trayectoria del balón permite reconstruir el recorrido de la jugada
+                    y relacionar las posiciones de los jugadores dentro de la acción.
+                </p>
+                <p>
+                    El croquis no reproduce el movimiento en tiempo real: lo convierte
+                    en una secuencia fija que puede leerse sobre el papel.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- SECCIÓN ARCHIVO RAMIRO -->
+        <section class="archivo-ramiro">
+            <div class="archivo-etiqueta">
+                ARCHIVO / RAMIRO CORRALES LUGO
+            </div>
+            <div class="archivo-espacio">
+            </div>
+        </section>
+
+        <!-- BOTÓN DE NAVEGACIÓN -->
+        <div class="navegacion-diapositiva">
+            <button id="comenzar" aria-label="Siguiente diapositiva">
+                <span>→</span>
+            </button>
         </div>
+    </main>
 
-        <div class="texto-intro">
-            Una jugada pasa una vez.
-Pero podemos volver a ella de muchas formas.<br>
-           ¿Qué cambia cada vez que una jugada se representa?
-        </div>
-
-        <button id="continuarCroquis">
-
-            <span>→</span>
-
-            SEGUIR LA JUGADA
-
-        </button>
-
-    </div>
-
-
-    <script src="js/script.js"></script>
+    <script src="js/croquis.js"></script>
 
 </body>
 
