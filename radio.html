@@ -48,24 +48,21 @@
                 </p>
             </div>
 
-            <!-- VISOR E IMAGEN CENTRADOS CON LA RADIO Y LAS PERILLAS -->
-            <div class="visor-croquis" style="position: relative; display: inline-block; width: 100%; max-width: 650px; text-align: center;">
-                <div style="position: relative; display: inline-block; width: 100%;">
-                    <img 
-                        class="composicion-croquis"
-                        src="./imagenes/radio.png"
-                        alt="Representación de una radio antigua"
-                        style="width: 100%; height: auto; display: block;"
-                    >
-                    <!-- Botón 1 (Perilla izquierda - El Relato) -->
-                    <div class="punto-jugador punto-1 llamar" id="btn-relato" style="position: absolute; left: 24.5%; top: 58%; width: 32px; height: 32px; background-color: #171717; border-radius: 50%; cursor: pointer; z-index: 10;">
-                        <span class="texto-pulsa" style="position: absolute; top: 34px; left: 50%; transform: translateX(-50%); font-size: 12px; font-weight: bold; color: #171717; white-space: nowrap;">Pulsa</span>
-                    </div>
+            <!-- CONTENEDOR DE LA RADIO Y BOTONES SOBREPUESTOS -->
+            <div class="contenedor-radio-perillas">
+                <img 
+                    class="imagen-radio-base"
+                    src="./imagenes/radio.png"
+                    alt="Representación de una radio antigua"
+                >
+                <!-- Botón 1 (Perilla izquierda - El Relato) -->
+                <div class="punto-jugador punto-1 llamar" id="btn-relato">
+                    <span class="texto-pulsa">Pulsa</span>
+                </div>
 
-                    <!-- Botón 2 (Perilla derecha - Selección y límite) -->
-                    <div class="punto-jugador punto-2 llamar" id="btn-seleccion" style="position: absolute; left: 81.5%; top: 58%; width: 26px; height: 26px; background-color: #171717; border-radius: 50%; cursor: pointer; z-index: 10;">
-                        <span class="texto-pulsa" style="position: absolute; top: 30px; left: 50%; transform: translateX(-50%); font-size: 12px; font-weight: bold; color: #171717; white-space: nowrap;">Pulsa</span>
-                    </div>
+                <!-- Botón 2 (Perilla derecha - Selección y límite) -->
+                <div class="punto-jugador punto-2 llamar" id="btn-seleccion">
+                    <span class="texto-pulsa">Pulsa</span>
                 </div>
             </div>
 
@@ -115,7 +112,7 @@
         </nav>
     </main>
 
-    <!-- BALÓN VOLADOR (Tamaño controlado y en la esquina inferior izquierda) -->
+    <!-- BALÓN VOLADOR -->
     <div class="balon-volador" id="balon-disparo" title="¡Dispara hacia los datos!">
         <img src="./imagenes/balon.png" alt="Balón dibujado">
     </div>
@@ -125,4 +122,4 @@
 
 </body>
 
-</html> 
+</html>
