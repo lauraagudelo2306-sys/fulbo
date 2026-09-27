@@ -1,57 +1,70 @@
-/* Contenedor de la radio */
+/* =========================
+   RADIO Y PERILLAS FIJAS
+========================= */
+
+.contenedor-principal-radio {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Contenedor estricto con un tamaño fijo para que la radio no cambie */
 .contenedor-radio-perillas {
     position: relative;
     display: inline-block;
-    width: 350px;
+    width: 320px;
     margin: 30px auto;
 }
 
 .composicion-croquis {
-    width: 100% !important;
+    width: 320px !important;
+    max-width: 320px !important;
     height: auto !important;
     display: block;
 }
 
-/* Botón perilla izquierda (Ajustado al centro exacto de la perilla grande) */
+/* Botón perilla izquierda (Perilla grande de la radio) */
 #btn-relato {
     position: absolute;
-    top: 59%;
-    left: 23%;
-    width: 32px;
-    height: 32px;
+    top: 61%;
+    left: 23.5%;
+    width: 30px;
+    height: 30px;
     background-color: #171717;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 10;
+    z-index: 100;
     transform: translate(-50%, -50%);
 }
 
-/* Botón perilla derecha (Ajustado al centro exacto de la perilla pequeña) */
+/* Botón perilla derecha (Perilla pequeña de la radio) */
 #btn-seleccion {
     position: absolute;
-    top: 59%;
-    left: 77.5%;
-    width: 20px;
-    height: 20px;
+    top: 61%;
+    left: 81%;
+    width: 18px;
+    height: 18px;
     background-color: #171717;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 10;
+    z-index: 100;
     transform: translate(-50%, -50%);
 }
 
-/* El texto "Pulsa" flotando justo arriba de cada perilla */
+/* El texto "Pulsa" flotando encima de cada perilla */
 .texto-pulsa {
     position: absolute;
-    top: -18px;
+    top: -20px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 10px;
+    font-size: 9px;
     font-weight: bold;
     color: #171717;
     text-transform: uppercase;
     white-space: nowrap;
-    background: rgba(243, 241, 235, 0.85);
-    padding: 1px 4px;
-    border-radius: 3px;
-}
+    background: #f3f1eb;
+    padding: 2px 4px;
+    border: 1px solid #171717;
+    border-radius: 2px;
+} 
