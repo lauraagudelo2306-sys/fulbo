@@ -101,13 +101,17 @@
             </div>
         </section>
 
-        <!-- NAVEGACIÓN / SIGUIENTE (Forzada a la esquina inferior derecha) -->
-        <nav class="navegacion-diapositiva" style="position: fixed !important; bottom: 30px !important; right: 30px !important; left: auto !important; top: auto !important; z-index: 9999 !important;">
-            <a href="radio.html" aria-label="Siguiente diapositiva">
-                <button id="comenzar">
-                    <span>→</span>
-                </button>
-            </a>
+        <!-- NAVEGACIÓN / ESQUINA INFERIOR DERECHA (Megáfono, texto y botón) -->
+        <nav class="navegacion-diapositiva" style="position: fixed !important; bottom: 20px !important; right: 20px !important; left: auto !important; top: auto !important; z-index: 9999 !important; display: flex; flex-direction: column; align-items: flex-end; gap: 6px;">
+            <img src="imagenes/megafono.png" alt="Ilustración de sonido" style="width: 90px; height: auto;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: #111; font-weight: 500;">los que no lo veían...</span>
+                <a href="radio.html" aria-label="Siguiente diapositiva">
+                    <button id="comenzar" style="position: static !important;">
+                        <span>→</span>
+                    </button>
+                </a>
+            </div>
         </nav>
     </main>
 
