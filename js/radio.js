@@ -41,11 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
             balonDisparo.classList.add('volando');
             
-            // Espera a que termine la animación de impacto (800ms) y cambia de página
+            // Espera a que termine la animación de impacto (850ms) y cambia de página
             setTimeout(() => {
-                window.location.href = 'datos.html'; // Cambia por el nombre exacto de tu siguiente página si es diferente
-            }, 800);
+                window.location.href = 'datos.html'; 
+            }, 850);
         });
     }
 });
-
