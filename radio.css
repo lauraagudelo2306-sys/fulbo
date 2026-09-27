@@ -1,62 +1,142 @@
 /* =========================
-   RADIO Y PERILLAS FIJAS
+   SECCIÓN RADIO ANIMADA
 ========================= */
 
-.contenedor-radio-perillas {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    max-width: 600px;
-    margin: 20px 0;
+#seccion-radio-animada {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 8%;
+    background: #f3f1eb;
 }
 
-.imagen-radio-base {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Botón 1 (Perilla izquierda) */
-#btn-relato {
-    position: absolute;
-    top: 61%;
-    left: 24.5%;
-    width: 24px;
-    height: 24px;
-    background-color: #171717;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-}
-
-/* Botón 2 (Perilla derecha) */
-#btn-seleccion {
-    position: absolute;
-    top: 61%;
-    left: 81.5%;
-    width: 24px;
-    height: 24px;
-    background-color: #171717;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.texto-pulsa {
-    position: absolute;
-    top: 28px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 11px;
-    font-weight: bold;
+/* Título de la radio con la misma animación de entrada */
+.radio-titulo {
+    font-size: clamp(65px, 9vw, 130px);
+    line-height: 0.85;
+    letter-spacing: -6px;
+    font-weight: 700;
     color: #171717;
-    white-space: nowrap;
+    margin-bottom: 30px;
+    animation: entradaRadio 1s ease-out forwards;
+}
+
+@keyframes entradaRadio {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ecualizador / Ondas animadas (crecen igual que las líneas de la cancha) */
+.ondas-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    height: 70px;
+    margin-top: 20px;
+}
+
+.ondas-container .onda-barra {
+    width: 6px;
+    height: 0; /* Empieza en 0 para simular que se "dibuja" */
+    background: #171717;
+    animation: dibujarBarra 1.5s forwards, latidoOnda 1s infinite alternate ease-in-out;
+    animation-delay: 0.5s; /* Retraso para sincronizar */
+}
+
+/* Retrasos escalonados para cada barra de la radio */
+.ondas-container .onda-barra:nth-child(1) { animation-delay: 0.2s, 1.5s; }
+.ondas-container .onda-barra:nth-child(2) { animation-delay: 0.4s, 1.7s; }
+.ondas-container .onda-barra:nth-child(3) { animation-delay: 0.3s, 1.6s; }
+.ondas-container .onda-barra:nth-child(4) { animation-delay: 0.6s, 1.9s; }
+.ondas-container .onda-barra:nth-child(5) { animation-delay: 0.5s, 1.8s; }
+
+@keyframes dibujarBarra {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+@keyframes latidoOnda {
+    0% {
+        transform: scaleY(0.4);
+    }
+    100% {
+        transform: scaleY(1);
+    }
 }
 
 /* =========================
-   BALÓN VOLADOR EN PARÁBOLA
+   PÁGINA RADIO (radio.html)
 ========================= */
 
+/* El contenedor de la radio se anima completo (imagen + puntos) */
+.visor-croquis > div {
+    transition: transform 0.6s ease;
+}
+
+/* Título por encima de la radio */
+.intro-croquis {
+    position: relative;
+    z-index: 2;
+}
+
+/* Textos de las perillas: debajo de la radio, sin tapar los botones */
+.texto-panagua,
+.texto-balon {
+    position: fixed;
+    top: auto;
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    z-index: 30;
+}
+
+/* Sección archivo */
+.archivo-ramiro {
+    padding: 80px 8%;
+}
+
+.archivo-etiqueta {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* Flecha siguiente */
+.navegacion-diapositiva {
+    position: fixed;
+    bottom: 25px;
+    right: 35px;
+    z-index: 20;
+}
+
+#comenzar {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #171717;
+    border-radius: 50%;
+    background: transparent;
+    color: #171717;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#comenzar:hover {
+    background: #171717;
+    color: #f3f1eb;
+}
+
+/* Balón volador en parábola */
 .balon-volador {
     position: fixed;
     bottom: 25px;
@@ -95,3 +175,4 @@
         opacity: 0.2;
     }
 }
+
