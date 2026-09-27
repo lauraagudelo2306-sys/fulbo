@@ -1,22 +1,56 @@
 /* =========================
-   SECCIÓN RADIO ANIMADA
+   RADIO Y PERILLAS FIJAS
 ========================= */
 
-#seccion-radio-animada {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 100px 8%;
-    background: #f3f1eb;
+.contenedor-radio-perillas {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
 }
 
-.radio-titulo {
-    font-size: clamp(65px, 9vw, 130px);
-    line-height: 0.85;
-    letter-spacing: -6px;
-    font-weight: 700;
+.imagen-radio-base {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Botón 1 (Perilla izquierda) */
+#btn-relato {
+    position: absolute;
+    top: 61%;
+    left: 24.5%;
+    width: 24px;
+    height: 24px;
+    background-color: #171717;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Botón 2 (Perilla derecha) */
+#btn-seleccion {
+    position: absolute;
+    top: 61%;
+    left: 81.5%;
+    width: 24px;
+    height: 24px;
+    background-color: #171717;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.texto-pulsa {
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    font-weight: bold;
     color: #171717;
-    margin-bottom: 30px;
+    white-space: nowrap;
 }
 
 /* =========================
@@ -25,10 +59,10 @@
 
 .balon-volador {
     position: fixed;
-    bottom: 30px;
-    left: 30px;
-    width: 45px; /* Tamaño controlado, ni gigante ni invisible */
-    height: 45px;
+    bottom: 25px;
+    left: 25px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     z-index: 9999;
     transition: transform 0.3s ease;
@@ -45,7 +79,6 @@
     transform: scale(1.15);
 }
 
-/* Clase que activa la parábola hacia la esquina superior derecha */
 .volando {
     animation: parabolaImpacto 0.85s cubic-bezier(0.15, 0.85, 0.35, 1) forwards;
 }
@@ -58,7 +91,7 @@
         transform: translate(45vw, -45vh) rotate(360deg) scale(1.1);
     }
     100% {
-        transform: translate(calc(100vw - 90px), calc(-100vh + 90px)) rotate(720deg) scale(0.4);
+        transform: translate(calc(100vw - 80px), calc(-100vh + 80px)) rotate(720deg) scale(0.4);
         opacity: 0.2;
     }
 }
