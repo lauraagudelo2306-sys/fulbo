@@ -7,10 +7,8 @@
 body {
     background: #f3f1eb;
     color: #171717;
-
     font-family: "Space Grotesk", sans-serif;
-
-    min-height: 100vh;
+    min-height: 160vh;
 }
 
 
@@ -20,12 +18,9 @@ body {
 
 .numero-croquis {
     position: fixed;
-
     top: 28px;
     right: 35px;
-
     font-size: 12px;
-
     letter-spacing: 2px;
 }
 
@@ -36,29 +31,22 @@ body {
 
 .encabezado-croquis {
     position: absolute;
-
     top: 28px;
     left: 35px;
     right: 100px;
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 }
 
 .marca {
     font-size: 13px;
-
     font-weight: 700;
-
     letter-spacing: 2px;
 }
 
 .etiqueta {
     font-size: 10px;
-
     letter-spacing: 2px;
 }
 
@@ -69,39 +57,30 @@ body {
 
 .intro-croquis {
     padding-top: 150px;
-
     margin-left: 8%;
-
     width: 500px;
 }
 
 .texto-pequeno {
     font-size: 11px;
-
     letter-spacing: 2px;
-
     margin-bottom: 25px;
 }
 
 .intro-croquis h1 {
     font-size: clamp(65px, 9vw, 130px);
-
     line-height: 0.85;
-
     letter-spacing: -6px;
-
     font-weight: 700;
 }
 
 .intro-croquis p {
     margin-top: 35px;
-
     width: 390px;
-
     font-size: 14px;
-
     line-height: 1.5;
 }
+
 
 /* =========================
    COMPOSICIÓN PRINCIPAL
@@ -109,13 +88,9 @@ body {
 
 .composicion-seccion {
     display: flex;
-
     align-items: center;
-
     min-height: 750px;
-
     margin-top: 80px;
-
     padding-left: 8%;
     padding-right: 8%;
 }
@@ -127,9 +102,7 @@ body {
 
 .composicion-seccion .intro-croquis {
     width: 45%;
-
     margin-left: 0;
-
     padding-top: 0;
 }
 
@@ -151,7 +124,6 @@ body {
     max-width: none;
     display: block;
     margin: 0;
-
     transition: transform 0.6s ease;
 }
 
@@ -159,67 +131,61 @@ body {
     transition: opacity 0.2s ease;
 }
 
+
+/* =========================
+   PUNTOS INTERACTIVOS
+========================= */
+
 .punto-jugador {
-
     position: absolute;
-
     width: 12px;
-
     height: 12px;
-
     background: #171717;
-
     border-radius: 50%;
-
     opacity: 0;
-
-    transition: opacity 0.5s ease, transform 0.2s ease;
-
+    transition:
+        opacity 0.5s ease,
+        transform 0.2s ease;
     z-index: 10;
-
     cursor: pointer;
 }
 
 .punto-1 {
-
     top: 70%;
-
     left: 50%;
 }
 
 .punto-2 {
-
     top: 72%;
-
-    left:65%;
+    left: 65%;
 }
-
-
 
 .punto-jugador:hover {
-
     transform: scale(1.5);
 }
+
 .punto-jugador.activo {
     transform: scale(1.8);
 }
+
+
+/* =========================
+   TEXTO PANAGUA
+========================= */
 
 .texto-panagua {
     position: absolute;
     top: 55%;
     left: 55%;
-
     width: 280px;
     padding: 20px;
-
     background: #f3f1eb;
     border: 1px solid #171717;
-
     opacity: 0;
     pointer-events: none;
-
     transition: opacity 0.4s ease;
 }
+
 .etiqueta-panagua {
     font-size: 10px;
     letter-spacing: 2px;
@@ -236,20 +202,21 @@ body {
     pointer-events: auto;
 }
 
+
+/* =========================
+   TEXTO BALÓN
+========================= */
+
 .texto-balon {
     position: absolute;
     top: 68%;
-    left:68%;
-
+    left: 68%;
     width: 280px;
     padding: 20px;
-
     background: #f3f1eb;
     border: 1px solid #171717;
-
     opacity: 0;
     pointer-events: none;
-
     transition: opacity 0.4s ease;
 }
 
@@ -267,4 +234,522 @@ body {
 .texto-balon.visible {
     opacity: 1;
     pointer-events: auto;
+}
+
+
+/* =========================
+   CONTINUAR CROQUIS
+========================= */
+
+.continuar-croquis {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.continuar-croquis.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.continuar-croquis span {
+    display: block;
+    animation: flecha-abajo 1.5s ease-in-out infinite;
+}
+
+@keyframes flecha-abajo {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+
+/* =========================
+   ARCHIVO RAMIRO
+========================= */
+
+.archivo-ramiro {
+    min-height: 120vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.archivo-etiqueta {
+    position: absolute;
+    top: 40px;
+    left: 8%;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   LIBRO
+========================= */
+
+.libro {
+    width: 360px;
+    height: 500px;
+
+    position: relative;
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+.portada-libro {
+
+    width: 360px;
+    height: 500px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: #171717;
+    color: #f3f1eb;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    box-shadow:
+        8px 8px 0 #d6d2c8;
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.6s ease;
+}
+
+
+/* =========================
+   PORTADA ABIERTA
+========================= */
+
+.libro.abierto .portada-libro {
+
+    opacity: 0;
+
+    transform: translateX(-20px);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   CONTENEDOR DE PÁGINAS
+========================= */
+
+.libro-abierto {
+
+    width: 720px;
+    height: 500px;
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: #fffdf7;
+
+    box-shadow:
+        8px 8px 0 #d6d2c8;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.6s ease;
+}
+
+
+/* =========================
+   LIBRO ABIERTO
+========================= */
+
+.libro.abierto .libro-abierto {
+
+    opacity: 1;
+}
+
+
+/* =========================
+   DOBLE PÁGINA
+========================= */
+
+.doble-pagina {
+
+    width: 720px;
+    height: 500px;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+
+    opacity: 0;
+
+    transform: translateX(30px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s ease;
+}
+
+
+.doble-pagina.activa {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+    pointer-events: auto;
+}
+
+
+/* =========================
+   PÁGINAS
+========================= */
+
+.pagina-libro {
+
+    width: 360px;
+    height: 500px;
+
+    background: #fffdf7;
+
+    color: #171717;
+
+    padding: 25px;
+
+    position: relative;
+}
+
+
+.pagina-izquierda {
+
+    border-right: 1px solid #c9c6bd;
+}
+
+
+/* =========================
+   INDICACIONES
+========================= */
+
+.indicacion-pagina {
+
+    font-size: 11px;
+
+    letter-spacing: 0.08em;
+
+    color: #aaa69c;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   FLECHA
+========================= */
+
+.flecha-pagina {
+
+    position: absolute;
+
+    right: 25px;
+    bottom: 22px;
+
+    font-size: 22px;
+
+    color: #171717;
+
+    cursor: pointer;
+
+    opacity: 0.6;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+.flecha-pagina:hover {
+
+    transform: translateX(6px);
+
+    opacity: 1;
+}
+
+
+/* =========================
+   TEXTO PORTADA
+========================= */
+
+.libro-numero {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.libro-titulo {
+
+    font-size: 42px;
+
+    line-height: 0.9;
+
+    letter-spacing: -1.5px;
+
+    font-weight: 700;
+}
+
+
+.libro-subtitulo {
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.libro-flecha {
+
+    position: absolute;
+
+    right: 25px;
+    bottom: 22px;
+
+    font-size: 20px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.portada-libro:hover .libro-flecha {
+
+    transform: translateX(6px);
+}
+
+
+/* =========================
+   ARCHIVO
+========================= */
+
+.archivo-ramiro {
+
+    min-height: 120vh;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.archivo-etiqueta {
+
+    position: absolute;
+
+    top: 40px;
+    left: 8%;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+/* =========================
+   FLECHA DE CIERRE DEL LIBRO
+========================= */
+
+.flecha-cierre {
+
+    position: absolute;
+
+    right: 25px;
+    bottom: 22px;
+
+    font-size: 22px;
+
+    color: #171717;
+
+    cursor: pointer;
+
+    opacity: 0.6;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+.flecha-cierre:hover {
+
+    transform: translateX(6px);
+
+    opacity: 1;
+}
+
+
+/* =========================
+   DESAPARECER LIBRO
+========================= */
+
+.libro.cerrando {
+
+    opacity: 0;
+
+    transform: translateY(-10px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+
+/* =========================
+   PREGUNTA SIGUIENTE
+========================= */
+
+.pregunta-siguiente {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    opacity: 0;
+
+    animation: aparecer-pregunta 0.8s ease forwards;
+}
+
+
+/* =========================
+   NÚMERO
+========================= */
+
+.pregunta-numero {
+
+    position: absolute;
+
+    top: 40px;
+    right: 8%;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   PREGUNTA
+========================= */
+
+.pregunta-siguiente h2 {
+
+    font-size: clamp(50px, 7vw, 90px);
+
+    line-height: 0.9;
+
+    letter-spacing: -4px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   FLECHA SIGUIENTE
+========================= */
+
+.seguir-siguiente {
+
+    margin-top: 45px;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    opacity: 0.6;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+.seguir-siguiente:hover {
+
+    transform: translateX(7px);
+
+    opacity: 1;
+}
+
+
+/* =========================
+   ANIMACIÓN
+========================= */
+
+@keyframes aparecer-pregunta {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
 }
