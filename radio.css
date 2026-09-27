@@ -1,39 +1,8 @@
-/* =========================
-   ESTILOS DE RADIO FIJOS Y LIMPIOS
-========================= */
-
-body {
-    background-color: #f3f1eb;
-    font-family: 'Space Grotesk', sans-serif;
-    color: #171717;
-    margin: 0;
-    padding: 40px 20px;
-}
-
-.contenedor-principal-radio {
-    max-width: 1100px;
-    margin: 0 auto;
-    position: relative;
-}
-
-/* Título fijo y ordenado para que no se cruce con la radio */
-.intro-croquis {
-    margin-bottom: 30px;
-    max-width: 500px;
-}
-
-.intro-croquis h1 {
-    font-size: clamp(36px, 5vw, 64px);
-    line-height: 0.95;
-    font-weight: 700;
-    margin: 10px 0;
-}
-
-/* Contenedor de la radio y perillas posicionadas exactamente */
+/* Contenedor de la radio más pequeño y controlado */
 .contenedor-radio-perillas {
     position: relative;
     display: inline-block;
-    max-width: 550px;
+    max-width: 380px; /* <--- Aquí reducimos el tamaño máximo para que no se vea gigante */
     width: 100%;
     margin: 20px 0;
 }
@@ -49,8 +18,8 @@ body {
     position: absolute;
     top: 61%;
     left: 24.5%;
-    width: 22px;
-    height: 22px;
+    width: 18px; /* Reducido proporcionalmente al nuevo tamaño */
+    height: 18px;
     background-color: #171717;
     border-radius: 50%;
     cursor: pointer;
@@ -62,8 +31,8 @@ body {
     position: absolute;
     top: 61%;
     left: 81.5%;
-    width: 22px;
-    height: 22px;
+    width: 18px; /* Reducido proporcionalmente al nuevo tamaño */
+    height: 18px;
     background-color: #171717;
     border-radius: 50%;
     cursor: pointer;
@@ -72,92 +41,12 @@ body {
 
 .texto-pulsa {
     position: absolute;
-    top: 25px;
+    top: 22px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 11px;
+    font-size: 10px;
     font-weight: bold;
     color: #171717;
     text-transform: uppercase;
     white-space: nowrap;
-}
-
-/* Cajas de textos informativos (Ocultas por defecto, se muestran con JS) */
-.texto-panagua,
-.texto-balon {
-    display: none;
-    background: #ffffff;
-    border: 1.5px solid #171717;
-    padding: 20px;
-    margin-top: 15px;
-    max-width: 500px;
-    border-radius: 6px;
-    box-shadow: 4px 4px 0px #171717;
-}
-
-.texto-panagua.activo-texto,
-.texto-balon.activo-texto {
-    display: block;
-}
-
-/* Balón pequeño en la esquina inferior izquierda funcionando como botón */
-.balon-volador {
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    z-index: 9999;
-    transition: transform 0.2s ease;
-}
-
-.balon-volador img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-}
-
-.balon-volador:hover {
-    transform: scale(1.15);
-}
-
-.volando {
-    animation: parabolaImpacto 0.7s cubic-bezier(0.15, 0.85, 0.35, 1) forwards;
-}
-
-@keyframes parabolaImpacto {
-    0% {
-        transform: translate(0, 0) rotate(0deg) scale(1);
-    }
-    100% {
-        transform: translate(60vw, -50vh) rotate(360deg) scale(0.3);
-        opacity: 0;
-    }
-}
-
-/* Flecha de navegación inferior */
-.navegacion-diapositiva {
-    margin-top: 40px;
-}
-
-#comenzar {
-    width: 45px;
-    height: 45px;
-    border: 1.5px solid #171717;
-    border-radius: 50%;
-    background: transparent;
-    color: #171717;
-    font-size: 18px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s ease, color 0.2s ease;
-}
-
-#comenzar:hover {
-    background: #171717;
-    color: #f3f1eb;
 }
