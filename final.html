@@ -28,118 +28,210 @@
     </header>
 
 
-    <main class="final">
+    <main class="cierre">
 
-        <!-- INTRODUCCIÓN -->
+        <!-- PANTALLA 1 -->
 
-        <section class="reflexion-final">
+        <section class="pantalla pantalla-1 activa">
 
-            <div class="titulo-final">
-                VOLVAMOS A LA JUGADA.
+            <div class="contenido-pantalla">
+                <h1>
+                    ¿QUÉ PASA CON UNA JUGADA
+                    CUANDO INTENTAMOS
+                    REPRESENTARLA?
+                </h1>
             </div>
 
-            <div class="texto-final">
+            <button class="flecha-final" data-siguiente>
+                →
+            </button>
 
-                <p>
-                    Una partida de fútbol nunca
-                    se representa completa.
+        </section>
+
+
+        <!-- PANTALLA 2 -->
+
+        <section class="pantalla pantalla-2">
+
+            <div class="contenido-pantalla texto-centrado">
+
+                <p class="frase-principal">
+                    No podemos guardar
+                    la jugada completa.
                 </p>
 
-                <p>
-                    Cada forma de representarla
-                    funciona como un filtro:
-                    selecciona qué puede mostrar
-                    y qué queda por fuera.
-                </p>
-
-                <p>
-                    El croquis selecciona un momento.
-                    La radio, lo que se cuenta.
-                    El tracking, lo que se puede medir.
+                <p class="frase-secundaria">
+                    Tenemos que elegir
+                    qué mirar.
                 </p>
 
             </div>
 
-        </section>
-
-
-        <!-- REPRESENTACIONES -->
-
-        <section class="representaciones-final">
-
-            <div class="representacion">
-                <span>EL CROQUIS</span>
-                <p>selecciona un momento.</p>
-            </div>
-
-            <div class="representacion">
-                <span>LA RADIO</span>
-                <p>selecciona lo que se cuenta.</p>
-            </div>
-
-            <div class="representacion">
-                <span>EL TRACKING</span>
-                <p>selecciona lo que se puede medir.</p>
-            </div>
+            <button class="flecha-final" data-siguiente>
+                →
+            </button>
 
         </section>
 
 
-        <!-- PASO DEL TIEMPO -->
+        <!-- PANTALLA 3 -->
 
-        <section class="idea-final">
+        <section class="pantalla pantalla-3">
 
-            <p>
-                Desde los croquis de los años 60 y 70
-                hasta los sistemas actuales de tracking
-                y los mapas de calor, han cambiado
-                las formas de registrar el fútbol.
-            </p>
+            <div class="representaciones">
 
-            <div class="frase-grande">
-                PERO TENER MÁS DATOS<br>
-                NO SIGNIFICA TENER<br>
-                LA JUGADA COMPLETA.
+                <button class="representacion-final" data-representacion="croquis">
+
+                    <span>CROQUIS</span>
+                    <p>un momento</p>
+
+                </button>
+
+
+                <button class="representacion-final" data-representacion="radio">
+
+                    <span>RADIO</span>
+                    <p>lo que se cuenta</p>
+
+                </button>
+
+
+                <button class="representacion-final" data-representacion="tracking">
+
+                    <span>TRACKING</span>
+                    <p>lo que se puede medir</p>
+
+                </button>
+
             </div>
+
+
+            <!-- INFORMACIÓN DE CADA REPRESENTACIÓN -->
+
+            <div class="info-representacion" id="info-croquis">
+
+                <div class="info-contenido">
+
+                    <span class="info-titulo">CROQUIS</span>
+
+                    <p>
+                        Selecciona un momento de la jugada.
+                    </p>
+
+                    <p class="info-secundaria">
+                        El dibujo reconstruye una acción
+                        a partir de lo observado, pero no
+                        registra todo lo que ocurrió.
+                    </p>
+
+                    <button class="cerrar-info">
+                        CERRAR →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-representacion" id="info-radio">
+
+                <div class="info-contenido">
+
+                    <span class="info-titulo">RADIO</span>
+
+                    <p>
+                        Selecciona lo que puede ser contado.
+                    </p>
+
+                    <p class="info-secundaria">
+                        La jugada se convierte en relato:
+                        alguien decide qué ocurrió y qué
+                        vale la pena narrar.
+                    </p>
+
+                    <button class="cerrar-info">
+                        CERRAR →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-representacion" id="info-tracking">
+
+                <div class="info-contenido">
+
+                    <span class="info-titulo">TRACKING</span>
+
+                    <p>
+                        Selecciona lo que puede ser medido.
+                    </p>
+
+                    <p class="info-secundaria">
+                        Posiciones, recorridos, velocidad,
+                        distancia. La jugada se convierte
+                        en datos.
+                    </p>
+
+                    <button class="cerrar-info">
+                        CERRAR →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button class="flecha-final flecha-pantalla-3" data-siguiente>
+                →
+            </button>
 
         </section>
 
 
-        <!-- CONCLUSIÓN -->
+        <!-- PANTALLA 4 -->
 
-        <section class="conclusion-final">
+        <section class="pantalla pantalla-4">
 
-            <p>
-                No se trata de decidir cuál
-                representación cuenta la jugada
-                “de verdad”.
-            </p>
+            <div class="contenido-pantalla">
 
-            <p>
-                Cada una muestra algo distinto.
-                Y también deja algo por fuera.
-            </p>
+                <div class="frase-datos">
+                    TENER MÁS DATOS<br>
+                    NO SIGNIFICA TENER<br>
+                    LA JUGADA COMPLETA.
+                </div>
 
-            <p>
-                La representación cambia.
-                El filtro permanece.
-            </p>
+                <p class="texto-cierre">
+                    Cada representación hace algo visible.<br>
+                    Y deja algo por fuera.
+                </p>
+
+            </div>
+
+            <button class="flecha-final" data-siguiente>
+                →
+            </button>
 
         </section>
 
 
-        <!-- CIERRE -->
+        <!-- PANTALLA 5 -->
 
-        <section class="ultimo-final">
+        <section class="pantalla pantalla-5">
 
-            <div class="ultimo-texto">
-                <span>UNA JUGADA.</span>
-                <span>MUCHAS REPRESENTACIONES.</span>
-                <span>Y ALGO SIEMPRE QUEDA POR FUERA.</span>
-            </div>
+            <div class="final-definitivo">
 
-            <div class="firma-final">
-                MIRADA EN LA JUEGA
+                <div class="frase-final">
+                    <span>UNA JUGADA.</span>
+                    <span>MUCHAS REPRESENTACIONES.</span>
+                    <span>Y ALGO SIEMPRE QUEDA POR FUERA.</span>
+                </div>
+
+                <div class="firma-final">
+                    MIRADA EN LA JUEGA
+                </div>
+
             </div>
 
             <div class="creditos-final">
@@ -148,7 +240,6 @@
             </div>
 
         </section>
-
 
     </main>
 

@@ -7,9 +7,12 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    min-height: 100%;
+    height: 100%;
+    overflow: hidden;
+
     background: #f3f1eb;
     color: #171717;
+
     font-family: "Space Grotesk", sans-serif;
 }
 
@@ -19,7 +22,7 @@ body {
 
 
 /* =========================
-   NÚMERO
+   ENCABEZADO
 ========================= */
 
 .numero-final {
@@ -32,11 +35,6 @@ body {
 
     z-index: 100;
 }
-
-
-/* =========================
-   HEADER
-========================= */
 
 .encabezado-final {
     position: fixed;
@@ -57,9 +55,9 @@ body {
 }
 
 .marca {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 800;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 }
 
 .etiqueta {
@@ -73,324 +71,386 @@ body {
    CONTENEDOR
 ========================= */
 
-.final {
+.cierre {
+    position: relative;
+
     width: 100%;
+    height: 100vh;
 }
 
 
 /* =========================
-   REFLEXIÓN
+   PANTALLAS
 ========================= */
 
-.reflexion-final {
-    min-height: 100vh;
+.pantalla {
+    position: absolute;
+    inset: 0;
 
-    padding: 150px 40px 100px;
+    width: 100%;
+    height: 100vh;
+
+    padding: 120px 50px 80px;
 
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.7s ease,
+        visibility 0.7s ease;
+}
+
+.pantalla.activa {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================
+   PANTALLA 1
+========================= */
+
+.pantalla-1 {
     text-align: center;
 }
 
-.titulo-final {
-    max-width: 1000px;
+.pantalla-1 h1 {
+    max-width: 1050px;
 
-    font-size: clamp(45px, 7vw, 100px);
+    margin: 0;
+
+    font-size: clamp(42px, 6.5vw, 92px);
     line-height: 0.9;
 
     font-weight: 700;
     letter-spacing: -4px;
 
     opacity: 0;
-    transform: translateY(35px);
+    transform: translateY(25px);
 
-    transition:
-        opacity 0.9s ease,
-        transform 0.9s ease;
+    animation: aparecer 0.9s ease forwards;
 }
 
-.titulo-final.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-.texto-final {
-    max-width: 620px;
-
-    margin-top: 65px;
-
-    font-size: 19px;
-    line-height: 1.45;
-}
-
-.texto-final p {
-    margin: 0 0 25px;
-
-    opacity: 0;
-    transform: translateY(20px);
-
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-}
-
-.texto-final p.visible {
-    opacity: 1;
-    transform: translateY(0);
+.pantalla-1.activa h1 {
+    animation: aparecer 0.9s ease forwards;
 }
 
 
 /* =========================
-   REPRESENTACIONES
+   PANTALLA 2
 ========================= */
 
-.representaciones-final {
+.texto-centrado {
+    flex-direction: column;
+    text-align: center;
+}
 
-    min-height: 75vh;
+.frase-principal {
+    max-width: 700px;
 
-    padding: 100px 8vw;
+    margin: 0;
+
+    font-size: clamp(35px, 5vw, 70px);
+    line-height: 0.95;
+
+    font-weight: 600;
+    letter-spacing: -3px;
+
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+.pantalla-2.activa .frase-principal {
+    animation: aparecer 0.8s ease forwards;
+}
+
+.frase-secundaria {
+    margin-top: 45px;
+
+    font-size: 22px;
+    line-height: 1.3;
+
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.pantalla-2.activa .frase-secundaria {
+    animation: aparecer 0.8s ease 0.4s forwards;
+}
+
+
+/* =========================
+   PANTALLA 3
+========================= */
+
+.representaciones {
+    width: min(1000px, 90%);
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
-    align-items: center;
+    gap: 20px;
 
-    gap: 25px;
-
-    border-top: 1px solid #171717;
-    border-bottom: 1px solid #171717;
+    transition: opacity 0.5s ease;
 }
 
-.representacion {
-
-    min-height: 220px;
-
-    padding: 35px 25px;
+.representacion-final {
+    min-height: 230px;
 
     border: 1px solid #171717;
 
+    background: transparent;
+    color: #171717;
+
+    font-family: "Space Grotesk", sans-serif;
+
     display: flex;
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
 
     text-align: center;
 
+    cursor: pointer;
+
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(25px);
 
     transition:
         opacity 0.7s ease,
-        transform 0.7s ease;
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
-.representacion.visible {
-    opacity: 1;
-    transform: translateY(0);
+.pantalla-3.activa .representacion-final:nth-child(1) {
+    animation: aparecer 0.7s ease forwards;
 }
 
-.representacion span {
+.pantalla-3.activa .representacion-final:nth-child(2) {
+    animation: aparecer 0.7s ease 0.25s forwards;
+}
 
-    font-size: 13px;
+.pantalla-3.activa .representacion-final:nth-child(3) {
+    animation: aparecer 0.7s ease 0.5s forwards;
+}
+
+.representacion-final:hover {
+    background: #171717;
+    color: #f3f1eb;
+    transform: translateY(-5px);
+}
+
+.representacion-final span {
+    font-size: 14px;
     font-weight: 700;
-
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
 }
 
-.representacion p {
-
-    margin-top: 20px;
+.representacion-final p {
+    margin: 18px 0 0;
 
     font-size: 22px;
-    line-height: 1.1;
-
     font-weight: 500;
 }
 
 
 /* =========================
-   IDEA CENTRAL
+   INFORMACIÓN
 ========================= */
 
-.idea-final {
+.info-representacion {
+    position: absolute;
+    inset: 0;
 
-    min-height: 100vh;
+    z-index: 20;
 
-    padding: 120px 40px;
+    background: #f3f1eb;
 
     display: flex;
-    flex-direction: column;
-
     justify-content: center;
     align-items: center;
+
+    padding: 120px 30px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease;
+}
+
+.info-representacion.abierta {
+    opacity: 1;
+    visibility: visible;
+}
+
+.info-contenido {
+    max-width: 720px;
 
     text-align: center;
 }
 
-.idea-final > p {
+.info-titulo {
+    display: block;
 
-    max-width: 620px;
+    margin-bottom: 35px;
 
-    font-size: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.info-contenido > p:first-of-type {
+    margin: 0;
+
+    font-size: clamp(32px, 4vw, 55px);
+    line-height: 1;
+
+    font-weight: 600;
+    letter-spacing: -2px;
+}
+
+.info-secundaria {
+    max-width: 600px;
+
+    margin: 35px auto 0;
+
+    font-size: 19px;
     line-height: 1.45;
-
-    opacity: 0;
-    transform: translateY(25px);
-
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
 }
 
-.idea-final > p.visible {
-    opacity: 1;
-    transform: translateY(0);
+.cerrar-info {
+    margin-top: 55px;
+
+    padding: 0;
+
+    border: none;
+    border-bottom: 1px solid #171717;
+
+    background: none;
+
+    color: #171717;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: opacity 0.3s ease;
+}
+
+.cerrar-info:hover {
+    opacity: 0.5;
 }
 
 
-.frase-grande {
+/* =========================
+   PANTALLA 4
+========================= */
 
-    margin-top: 80px;
+.pantalla-4 {
+    text-align: center;
+}
 
-    font-size: clamp(55px, 8vw, 120px);
-    line-height: 0.86;
+.frase-datos {
+    font-size: clamp(45px, 7vw, 105px);
+
+    line-height: 0.87;
 
     font-weight: 700;
     letter-spacing: -5px;
 
     opacity: 0;
-    transform: translateY(35px);
-
-    transition:
-        opacity 0.9s ease,
-        transform 0.9s ease;
+    transform: translateY(30px);
 }
 
-.frase-grande.visible {
-    opacity: 1;
-    transform: translateY(0);
+.pantalla-4.activa .frase-datos {
+    animation: aparecer 0.9s ease forwards;
 }
 
+.texto-cierre {
+    margin-top: 65px;
 
-/* =========================
-   CONCLUSIÓN
-========================= */
-
-.conclusion-final {
-
-    min-height: 90vh;
-
-    padding: 120px 40px;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    border-top: 1px solid #171717;
-}
-
-.conclusion-final p {
-
-    max-width: 720px;
-
-    margin: 0 0 35px;
-
-    font-size: clamp(21px, 2.5vw, 32px);
-    line-height: 1.15;
+    font-size: 20px;
+    line-height: 1.4;
 
     opacity: 0;
-    transform: translateY(25px);
-
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
+    transform: translateY(20px);
 }
 
-.conclusion-final p.visible {
-    opacity: 1;
-    transform: translateY(0);
+.pantalla-4.activa .texto-cierre {
+    animation: aparecer 0.8s ease 0.45s forwards;
 }
 
 
 /* =========================
-   ÚLTIMO GOLPE
+   PANTALLA 5
 ========================= */
 
-.ultimo-final {
-
-    position: relative;
-
-    min-height: 100vh;
-
-    padding: 100px 40px;
-
-    display: flex;
+.pantalla-5 {
     flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
 
     text-align: center;
-
-    border-top: 1px solid #171717;
 }
 
-.ultimo-texto {
+.final-definitivo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.frase-final {
     display: flex;
     flex-direction: column;
 
-    font-size: clamp(42px, 6vw, 85px);
-    line-height: 0.92;
+    font-size: clamp(40px, 6vw, 85px);
+
+    line-height: 0.9;
 
     font-weight: 700;
-    letter-spacing: -3px;
+    letter-spacing: -4px;
 }
 
-.ultimo-texto span {
-
+.frase-final span {
     opacity: 0;
     transform: translateY(25px);
-
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
 }
 
-.ultimo-texto span.visible {
-    opacity: 1;
-    transform: translateY(0);
+.pantalla-5.activa .frase-final span:nth-child(1) {
+    animation: aparecer 0.8s ease 0.1s forwards;
 }
 
+.pantalla-5.activa .frase-final span:nth-child(2) {
+    animation: aparecer 0.8s ease 0.45s forwards;
+}
+
+.pantalla-5.activa .frase-final span:nth-child(3) {
+    animation: aparecer 0.8s ease 0.8s forwards;
+}
 
 .firma-final {
+    margin-top: 80px;
 
-    margin-top: 90px;
-
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 800;
 
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 
     opacity: 0;
     transform: translateY(15px);
-
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
 }
 
-.firma-final.visible {
-    opacity: 1;
-    transform: translateY(0);
+.pantalla-5.activa .firma-final {
+    animation: aparecer 0.8s ease 1.25s forwards;
 }
 
 
@@ -399,16 +459,16 @@ body {
 ========================= */
 
 .creditos-final {
-
     position: absolute;
 
-    bottom: 28px;
+    bottom: 25px;
     left: 35px;
 
     font-size: 11px;
     line-height: 1.5;
 
     text-align: left;
+
     letter-spacing: 0.3px;
 
     opacity: 0.6;
@@ -416,95 +476,153 @@ body {
 
 
 /* =========================
-   RESPONSIVE
+   FLECHA
+========================= */
+
+.flecha-final {
+    position: absolute;
+
+    right: 35px;
+    bottom: 30px;
+
+    padding: 0;
+
+    border: none;
+    background: none;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 30px;
+    font-weight: 400;
+
+    color: #171717;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.flecha-final:hover {
+    transform: translateX(8px);
+}
+
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   CELULAR
 ========================= */
 
 @media (max-width: 700px) {
+
+    .numero-final {
+        display: none;
+    }
 
     .encabezado-final {
         width: calc(100% - 32px);
     }
 
     .marca {
-        font-size: 15px;
+        font-size: 11px;
+        letter-spacing: 1px;
     }
 
     .etiqueta {
-        font-size: 10px;
+        font-size: 9px;
+        letter-spacing: 0.5px;
     }
 
-    .numero-final {
-        display: none;
+    .pantalla {
+        padding: 100px 24px 70px;
     }
 
-
-    .reflexion-final {
-        padding: 120px 24px 80px;
-    }
-
-    .titulo-final {
-        font-size: clamp(43px, 12vw, 65px);
+    .pantalla-1 h1 {
+        font-size: clamp(36px, 11vw, 58px);
         letter-spacing: -3px;
     }
 
-    .texto-final {
-        margin-top: 45px;
-        font-size: 17px;
+    .frase-principal {
+        font-size: clamp(32px, 10vw, 55px);
+        letter-spacing: -2px;
     }
 
+    .frase-secundaria {
+        font-size: 18px;
+    }
 
-    .representaciones-final {
-        min-height: auto;
-
-        padding: 70px 24px;
-
+    .representaciones {
+        width: 100%;
         grid-template-columns: 1fr;
+        gap: 12px;
     }
 
-    .representacion {
-        min-height: 170px;
+    .representacion-final {
+        min-height: 130px;
     }
 
-
-    .idea-final {
-        padding: 90px 24px;
+    .representacion-final p {
+        margin-top: 10px;
+        font-size: 18px;
     }
 
-    .frase-grande {
-        margin-top: 55px;
+    .info-contenido > p:first-of-type {
+        font-size: 32px;
+    }
 
-        font-size: clamp(48px, 13vw, 75px);
+    .info-secundaria {
+        font-size: 16px;
+    }
+
+    .frase-datos {
+        font-size: clamp(39px, 11vw, 65px);
         letter-spacing: -3px;
     }
 
-
-    .conclusion-final {
-        padding: 90px 24px;
+    .texto-cierre {
+        font-size: 17px;
+        margin-top: 45px;
     }
 
-    .conclusion-final p {
-        font-size: 21px;
-    }
-
-
-    .ultimo-final {
-        padding: 80px 24px;
-    }
-
-    .ultimo-texto {
-        font-size: clamp(38px, 11vw, 65px);
+    .frase-final {
+        font-size: clamp(34px, 10vw, 60px);
         letter-spacing: -2px;
     }
 
     .firma-final {
-        margin-top: 65px;
+        margin-top: 55px;
+        font-size: 13px;
     }
 
     .creditos-final {
-        bottom: 20px;
         left: 24px;
+        bottom: 18px;
+        font-size: 9px;
+    }
 
-        font-size: 10px;
+    .flecha-final {
+        right: 24px;
+        bottom: 20px;
+        font-size: 27px;
     }
 
 }

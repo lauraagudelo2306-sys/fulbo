@@ -1,40 +1,29 @@
-const titulo = document.querySelector(".titulo-final");
-const textos = document.querySelectorAll(".texto-final p");
+const pantallas = document.querySelectorAll(".pantalla");
+const flechas = document.querySelectorAll(".flecha-final");
+const representaciones = document.querySelectorAll(".representacion-final");
+const infos = document.querySelectorAll(".info-representacion");
+const botonesCerrar = document.querySelectorAll(".cerrar-info");
 
-const representaciones =
-    document.querySelectorAll(".representacion");
-
-const ideaTexto =
-    document.querySelector(".idea-final > p");
-
-const fraseGrande =
-    document.querySelector(".frase-grande");
-
-const conclusion =
-    document.querySelectorAll(".conclusion-final p");
-
-const ultimoTexto =
-    document.querySelectorAll(".ultimo-texto span");
-
-const firma =
-    document.querySelector(".firma-final");
+let pantallaActual = 0;
 
 
 /* =========================
-   APARICIÓN AL ENTRAR
+   CAMBIO DE PANTALLAS
 ========================= */
 
-window.addEventListener("load", () => {
+flechas.forEach((flecha) => {
 
-    setTimeout(() => {
-        titulo.classList.add("visible");
-    }, 300);
+    flecha.addEventListener("click", function () {
 
-    textos.forEach((texto, indice) => {
+        if (pantallaActual >= pantallas.length - 1) {
+            return;
+        }
 
-        setTimeout(() => {
-            texto.classList.add("visible");
-        }, 900 + indice * 500);
+        pantallas[pantallaActual].classList.remove("activa");
+
+        pantallaActual++;
+
+        pantallas[pantallaActual].classList.add("activa");
 
     });
 
@@ -42,35 +31,40 @@ window.addEventListener("load", () => {
 
 
 /* =========================
-   APARICIÓN AL HACER SCROLL
+   ABRIR REPRESENTACIONES
 ========================= */
 
-const elementos =
-    document.querySelectorAll(
-        ".representacion, .idea-final > p, .frase-grande, .conclusion-final p, .ultimo-texto span, .firma-final"
-    );
+representaciones.forEach((representacion) => {
 
+    representacion.addEventListener("click", function () {
 
-const observador =
-    new IntersectionObserver((entradas) => {
+        const nombre = representacion.dataset.representacion;
 
-        entradas.forEach((entrada) => {
+        const info = document.getElementById(`info-${nombre}`);
 
-            if (entrada.isIntersecting) {
+        if (info) {
+            info.classList.add("abierta");
+        }
 
-                entrada.target.classList.add("visible");
-
-            }
-
-        });
-
-    }, {
-        threshold: 0.25
     });
 
+});
 
-elementos.forEach((elemento) => {
 
-    observador.observe(elemento);
+/* =========================
+   CERRAR INFORMACIÓN
+========================= */
+
+botonesCerrar.forEach((boton) => {
+
+    boton.addEventListener("click", function () {
+
+        const info = boton.closest(".info-representacion");
+
+        if (info) {
+            info.classList.remove("abierta");
+        }
+
+    });
 
 });
