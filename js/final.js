@@ -3,6 +3,7 @@ const flechas = document.querySelectorAll(".flecha-final");
 const representaciones = document.querySelectorAll(".representacion-final");
 const infos = document.querySelectorAll(".info-representacion");
 const botonesCerrar = document.querySelectorAll(".cerrar-info");
+const audioCierre = document.getElementById("audioCierre");
 
 let pantallaActual = 0;
 
@@ -24,6 +25,19 @@ flechas.forEach((flecha) => {
         pantallaActual++;
 
         pantallas[pantallaActual].classList.add("activa");
+
+
+        /* =========================
+           AUDIO DEL CIERRE
+        ========================= */
+
+        if (
+            pantallaActual === 1 &&
+            audioCierre
+        ) {
+            audioCierre.currentTime = 0;
+            audioCierre.play();
+        }
 
     });
 

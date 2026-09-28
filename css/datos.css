@@ -848,6 +848,34 @@ body {
     letter-spacing: -1px;
 }
 
+/* =========================
+   FLECHA DE CIERRE
+========================= */
+
+.flecha-cierre-datos {
+    margin-top: 28px;
+    width: 52px;
+    height: 52px;
+    border: 1px solid #171717;
+    border-radius: 50%;
+    background: transparent;
+    color: #171717;
+    font-family: inherit;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.flecha-cierre-datos:hover {
+    background: #171717;
+    color: #f3f1eb;
+    transform: translateY(4px);
+}
+
 
 /* =========================
    CIERRE
