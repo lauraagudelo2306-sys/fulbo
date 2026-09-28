@@ -753,3 +753,398 @@ body {
     }
 
 }
+
+/* =========================
+   DISEÑO NUEVO DEL LIBRO
+========================= */
+
+.libro {
+    width: 360px;
+    height: 500px;
+}
+
+
+/* =========================
+   PÁGINAS
+========================= */
+
+.pagina-libro {
+    width: 360px;
+    height: 500px;
+    padding: 32px;
+    background: #fffdf7;
+    color: #171717;
+    position: relative;
+}
+
+.pagina-izquierda {
+    border-right: 1px solid #d5d1c8;
+}
+
+
+/* =========================
+   NÚMERO DE PÁGINA
+========================= */
+
+.numero-pagina {
+    position: absolute;
+    top: 25px;
+    left: 32px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+    opacity: 0.55;
+}
+
+
+/* =========================
+   TÍTULOS
+========================= */
+
+.titulo-pagina {
+    margin-top: 45px;
+    max-width: 290px;
+
+    font-size: 25px;
+    line-height: 0.95;
+    letter-spacing: -1.5px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   TEXTO
+========================= */
+
+.texto-pagina {
+    margin-top: 25px;
+    max-width: 275px;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   FIRMA RAMIRO
+========================= */
+
+.firma-pagina {
+    position: absolute;
+    left: 32px;
+    bottom: 32px;
+
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.firma-pagina span {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 9px;
+    line-height: 1.4;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+
+
+/* =========================
+   FOTO DE RAMIRO
+========================= */
+
+.foto-ramiro {
+    width: 100%;
+    height: 285px;
+
+    margin-top: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.foto-ramiro img {
+    width: 78%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+
+/* =========================
+   FRASE DE RAMIRO
+========================= */
+
+.frase-pagina {
+    margin-top: 22px;
+
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: -0.5px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   PROCESO
+========================= */
+
+.proceso-pagina {
+    margin-top: 25px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    max-width: 270px;
+
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.proceso-pagina span {
+    white-space: nowrap;
+}
+
+
+/* =========================
+   CONCEPTO LUPI + POSAVEC
+========================= */
+
+.concepto-pagina {
+    position: absolute;
+
+    left: 32px;
+    right: 32px;
+    bottom: 30px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid #d5d1c8;
+}
+
+.concepto-titulo {
+    font-size: 11px;
+    line-height: 1.05;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+}
+
+.concepto-autor {
+    margin-top: 5px;
+
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    opacity: 0.55;
+}
+
+.concepto-pagina p {
+    margin-top: 9px;
+
+    max-width: 260px;
+
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+
+/* =========================
+   CROQUIS DEL LIBRO
+========================= */
+
+.croquis-libro {
+    width: 100%;
+    height: 265px;
+
+    margin-top: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.croquis-libro img {
+    width: 58%;
+    height: auto;
+
+    max-height: 245px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================
+   ETIQUETAS DEL CROQUIS
+========================= */
+
+.etiquetas-croquis {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 12px;
+
+    max-width: 260px;
+}
+
+.etiquetas-croquis span {
+    font-size: 7px;
+    letter-spacing: 1.2px;
+
+    padding: 4px 6px;
+
+    border: 1px solid #c9c6bd;
+}
+
+
+/* =========================
+   FRASE DEL CROQUIS
+========================= */
+
+.frase-croquis {
+    margin-top: 12px;
+
+    font-size: 9px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   HERRAMIENTAS
+========================= */
+
+.proceso-herramientas {
+    position: absolute;
+
+    left: 32px;
+    right: 32px;
+    bottom: 35px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.proceso-herramientas span {
+    white-space: nowrap;
+}
+
+
+/* =========================
+   FRASE FINAL
+========================= */
+
+.frase-final-libro {
+    position: absolute;
+
+    left: 32px;
+    right: 32px;
+    bottom: 70px;
+
+    font-size: 18px;
+    line-height: 0.98;
+    letter-spacing: -0.5px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   FLECHAS
+========================= */
+
+.flecha-pagina,
+.flecha-cierre {
+
+    right: 25px;
+    bottom: 22px;
+
+    font-size: 21px;
+
+    opacity: 0.55;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.flecha-pagina:hover,
+.flecha-cierre:hover {
+
+    transform: translateX(5px);
+    opacity: 1;
+}
+
+
+/* =========================
+   RAMIRO — IMAGEN MÁS LIMPIA
+========================= */
+
+.foto-ramiro::before {
+    content: "ARCHIVO / RETRATO";
+
+    position: absolute;
+
+    top: 25px;
+    right: 32px;
+
+    font-size: 7px;
+    letter-spacing: 1.5px;
+
+    opacity: 0.45;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .libro-abierto {
+        width: 90vw;
+        height: 63vw;
+        max-height: 500px;
+    }
+
+    .doble-pagina {
+        width: 90vw;
+        height: 63vw;
+        max-height: 500px;
+    }
+
+    .pagina-libro {
+        width: 45vw;
+        height: 63vw;
+        max-height: 500px;
+        padding: 24px;
+    }
+
+    .titulo-pagina {
+        font-size: 20px;
+    }
+
+    .texto-pagina {
+        font-size: 10px;
+    }
+
+    .croquis-libro img {
+        width: 60%;
+    }
+}
