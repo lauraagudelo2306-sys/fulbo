@@ -3,239 +3,326 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Fulbo — Radio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fulbo — Datos</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/croquis.css">
-    <style>
-        .contenedor-principal-radio {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
-        /* Contenedor general de la radio centrado */
-        .contenedor-radio-perillas {
-            position: relative;
-            display: block;
-            width: 450px;
-            margin: 40px auto;
-        }
-
-        .composicion-croquis {
-            width: 100% !important;
-            height: auto !important;
-            display: block;
-        }
-
-        /* Perilla izquierda (Grande) */
-        #btn-relato {
-            position: absolute;
-            top: 58%;
-            left: 24.5%;
-            width: 42px; /* Perilla grande */
-            height: 42px;
-            background-color: #171717;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 10;
-            transform: translate(-50%, -50%);
-        }
-
-        /* Perilla derecha (Pequeña) */
-        #btn-seleccion {
-            position: absolute;
-            top: 58%;
-            left: 81.5%;
-            width: 20px; /* Perilla pequeña */
-            height: 20px;
-            background-color: #171717;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 10;
-            transform: translate(-50%, -50%);
-        }
-
-        /* Texto "Pulsa" debajo de cada perilla */
-        .texto-pulsa-izq {
-            position: absolute;
-            top: 78%;
-            left: 24.5%;
-            transform: translateX(-50%);
-            font-size: 11px;
-            font-weight: bold;
-            color: #171717;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
-
-        .texto-pulsa-der {
-            position: absolute;
-            top: 73%;
-            left: 81.5%;
-            transform: translateX(-50%);
-            font-size: 11px;
-            font-weight: bold;
-            color: #171717;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
-
-        /* Cajas informativas a los lados de la radio */
-        .zona-textos-radio {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .texto-panagua,
-        .texto-balon {
-            display: none;
-            background: #ffffff;
-            border: 1.5px solid #171717;
-            padding: 20px;
-            width: 45%;
-            border-radius: 6px;
-            box-shadow: 4px 4px 0px #171717;
-        }
-
-        .texto-panagua.activo-texto,
-        .texto-balon.activo-texto {
-            display: block;
-        }
-
-        /* Balón pequeño en la esquina */
-        .balon-volador {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            width: 40px !important;
-            height: 40px !important;
-            cursor: pointer;
-            z-index: 9999;
-            transition: transform 0.2s ease;
-        }
-
-        .balon-volador img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: contain;
-            display: block;
-        }
-
-        .balon-volador:hover {
-            transform: scale(1.15);
-        }
-
-        .volando {
-            animation: parabolaImpacto 0.7s cubic-bezier(0.15, 0.85, 0.35, 1) forwards;
-        }
-
-        @keyframes parabolaImpacto {
-            0% { transform: translate(0, 0) rotate(0deg) scale(1); }
-            100% { transform: translate(60vw, -50vh) rotate(360deg) scale(0.3); opacity: 0; }
-        }
-    </style>
+    <link rel="stylesheet" href="css/datos.css">
 </head>
 
 <body>
 
-    <!-- NÚMERO DE SECCIÓN -->
-    <div class="numero-croquis">
-        05
-    </div>
+    <div class="numero-datos">06</div>
 
-    <!-- ENCABEZADO -->
-    <header class="encabezado-croquis">
-        <div class="marca">
-            FULBO
-        </div>
-        <div class="etiqueta">
-            ARCHIVO DE RADIO
-        </div>
+    <header class="encabezado-datos">
+        <div class="marca">FULBO</div>
+        <div class="etiqueta">ARCHIVO DE DATOS</div>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="contenedor-principal-radio">
-        
-        <!-- TEXTO INTRODUCTORIO -->
-        <section class="intro-croquis">
-            <div class="texto-pequeno">
-                ANTES DE CONVERTIRSE EN DATOS
-            </div>
-            <h1>
-                UNA JUGADA<br>
-                ESCUCHADA
-            </h1>
-            <p>
-                Una jugada también podía convertirse en voz. En los años 60 y 80 la mayoría no veía el partido: lo escuchaba.
-            </p>
-        </section>
 
-        <!-- CONTENEDOR DE LA RADIO Y LAS PERILLAS -->
-        <div class="contenedor-radio-perillas">
-            <img class="composicion-croquis" src="./imagenes/radio.png" alt="Representación de una radio antigua">
-            
-            <!-- Perilla Izquierda (Grande) -->
-            <div class="punto-jugador llamar" id="btn-relato"></div>
-            <span class="texto-pulsa-izq">Pulsa</span>
+    <main class="contenedor-datos">
 
-            <!-- Perilla Derecha (Pequeña) -->
-            <div class="punto-jugador llamar" id="btn-seleccion"></div>
-            <span class="texto-pulsa-der">Pulsa</span>
-        </div>
+        <!-- PREGUNTA DE ENTRADA -->
 
-        <!-- ZONA DE TEXTOS LATERALES (Izquierda y Derecha) -->
-        <div class="zona-textos-radio">
-            <!-- TEXTO RELATOR (Izquierda) -->
-            <div class="texto-panagua" id="info-relato">
-                <div class="etiqueta-panagua">
-                    EL RELATO
-                </div>
-                <p>
-                    Antes de convertirse en datos, una jugada también podía convertirse en voz. El relator seleccionaba el ritmo, el tono y el grito del gol.
-                </p>
+        <section
+            class="entrada-datos"
+            id="entrada-datos"
+        >
+
+            <div class="pregunta-datos">
+                ¿QUÉ PASA CUANDO YA NO NECESITAMOS
+                QUE ALGUIEN NOS CUENTE
+                DÓNDE ESTABA CADA JUGADOR?
             </div>
 
-            <!-- TEXTO SELECCIÓN Y LÍMITE (Derecha) -->
-            <div class="texto-balon" id="info-seleccion">
-                <div class="etiqueta-balon">
-                    SELECCIÓN Y LÍMITE
-                </div>
-                <p>
-                    El oyente imaginaba el resto. La radio no reproduce la jugada: la convierte en relato.
-                </p>
-            </div>
-        </div>
-
-        <!-- SECCIÓN ARCHIVO -->
-        <section class="archivo-ramiro" style="margin-top: 40px;">
-            <div class="archivo-etiqueta">
-                ARCHIVAR / NARRACIÓN RADIAL
-            </div>
-        </section>
-
-        <!-- NAVEGACIÓN / FLECHA -->
-        <nav class="navegacion-diapositiva" style="text-align: center; margin-top: 30px;">
-            <button id="comenzar" aria-label="Siguiente diapositiva" style="width: 45px; height: 45px; border: 1.5px solid #171717; border-radius: 50%; background: transparent; color: #171717; font-size: 18px; cursor: pointer;">
-                <span>→</span>
+            <button
+                class="flecha-entrada"
+                id="flecha-entrada"
+                aria-label="Continuar"
+            >
+                ↓
             </button>
-        </nav>
-    </main>
 
-    <!-- BALÓN PEQUEÑO COMO BOTÓN INTERACTIVO -->
-    <div class="balon-volador" id="balon-disparo" title="Ir a datos">
-        <img src="./imagenes/balon.png" alt="Balón de fútbol">
+        </section>
+
+
+        <!-- REPRESENTACIÓN DE DATOS -->
+
+        <section
+            class="experiencia-datos"
+            id="experiencia-datos"
+        >
+
+            <div class="titulo-experiencia">
+                YA PODEMOS REGISTRARLO.
+            </div>
+
+
+            <!-- CANCHA -->
+
+            <div
+                class="cancha-datos"
+                id="cancha-datos"
+            >
+
+                <div class="linea-central"></div>
+
+                <div class="circulo-central"></div>
+
+                <div class="area area-izquierda"></div>
+                <div class="area area-derecha"></div>
+
+                <div class="portería porteria-izquierda"></div>
+                <div class="portería porteria-derecha"></div>
+
+
+                <!-- JUGADORES -->
+
+                <div
+                    class="jugador-dato jugador-1"
+                    data-jugador="1"
+                ></div>
+
+                <div
+                    class="jugador-dato jugador-2"
+                    data-jugador="2"
+                ></div>
+
+                <div
+                    class="jugador-dato jugador-3"
+                    data-jugador="3"
+                ></div>
+
+                <div
+                    class="jugador-dato jugador-4"
+                    data-jugador="4"
+                ></div>
+
+                <div
+                    class="jugador-dato jugador-5"
+                    data-jugador="5"
+                ></div>
+
+                <div
+                    class="jugador-dato jugador-6"
+                    data-jugador="6"
+                ></div>
+
+
+                <!-- BALÓN -->
+
+                <div
+                    class="balon-dato"
+                    id="balon-dato"
+                >
+                    ·
+                </div>
+
+            </div>
+
+
+            <!-- INFORMACIÓN DEL TRACKING -->
+
+            <div
+                class="info-tracking"
+                id="info-tracking"
+            >
+
+                <div class="etiqueta-tracking">
+                    TRACKING
+                </div>
+
+                <div class="texto-tracking">
+                    El sistema registra la posición
+                    de los jugadores durante la jugada.
+                </div>
+
+            </div>
+
+
+            <!-- MODOS DE REPRESENTACIÓN -->
+
+            <div
+                class="selector-datos"
+                id="selector-datos"
+            >
+
+                <div class="pregunta-selector">
+                    ¿QUÉ QUIERES VER DE LA JUGADA?
+                </div>
+
+                <div class="opciones-datos">
+
+                    <button
+                        class="opcion-dato"
+                        data-modo="posicion"
+                    >
+                        POSICIÓN
+                    </button>
+
+                    <button
+                        class="opcion-dato"
+                        data-modo="recorrido"
+                    >
+                        RECORRIDO
+                    </button>
+
+                    <button
+                        class="opcion-dato"
+                        data-modo="pases"
+                    >
+                        PASES
+                    </button>
+
+                    <button
+                        class="opcion-dato"
+                        data-modo="zona"
+                    >
+                        ZONA
+                    </button>
+
+                </div>
+
+            </div>
+
+
+          <!-- EXPLICACIÓN DEL MODO SELECCIONADO -->
+
+<div
+    class="explicacion-dato"
+    id="explicacion-dato"
+>
+    <div
+        class="titulo-explicacion"
+        id="titulo-explicacion"
+    ></div>
+
+    <p id="texto-explicacion"></p>
+</div>
+
+</section>
+
+
+<!-- PREGUNTA FINAL -->
+
+<div
+    class="pregunta-limite"
+    id="pregunta-limite"
+>
+    <div>
+        ¿QUÉ QUEDA POR FUERA?
     </div>
 
-    <!-- SCRIPT -->
-    <script src="js/radio.js"></script>
+    <button
+        id="flecha-limite"
+        class="flecha-limite"
+        aria-label="Ver qué queda por fuera"
+    >
+        ↓
+    </button>
+</div>
+
+
+            <!-- LO QUE NO REGISTRA -->
+
+            <section class="fuera-datos" id="fuera-datos">
+
+    <div class="titulo-fuera">
+        EL SISTEMA PUEDE REGISTRAR LA JUGADA.
+    </div>
+
+    <div class="subtitulo-fuera">
+        PERO PARA CONVERTIRLA EN DATOS, HAY QUE DEJAR COSAS POR FUERA.
+    </div>
+
+    <div class="capas-fuera">
+
+        <div class="capa-fuera capa-medible">
+            <div class="etiqueta-capa">LO QUE PUEDE MEDIR</div>
+
+            <div class="elementos-capa">
+                <span>POSICIÓN</span>
+                <span>VELOCIDAD</span>
+                <span>DISTANCIA</span>
+                <span>PASES</span>
+                <span>ZONA</span>
+            </div>
+        </div>
+
+
+        <div class="capa-fuera capa-invisible">
+            <div class="etiqueta-capa">LO QUE NO PUEDE SABER SOLO CON ESO</div>
+
+            <div class="elementos-capa">
+                <span>INTENCIÓN</span>
+                <span>DUDA</span>
+                <span>DECISIÓN</span>
+                <span>EMOCIÓN</span>
+            </div>
+        </div>
+
+
+        <div class="capa-fuera capa-no-ocurrio">
+
+            <div class="etiqueta-capa">
+                LO QUE NO OCURRIÓ
+            </div>
+
+            <div class="frase-no-ocurrio">
+                UNA DECISIÓN QUE CAMBIÓ<br>
+                ANTES DE CONVERTIRSE EN ACCIÓN.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="critica-datos">
+
+        <div class="critica-principal">
+            LO QUE SE MIDE
+        </div>
+
+        <div class="critica-secundaria">
+            NO ES TODO LO QUE PASA
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="cierre-datos" id="cierre-datos">
+
+    <div class="cierre-principal">
+        UNA JUGADA PUEDE CONVERTIRSE<br>
+        EN MUCHOS DATOS.
+    </div>
+
+    <div class="cierre-secundario">
+        PERO NINGUNA REPRESENTACIÓN CONTIENE LA JUGADA COMPLETA.
+    </div>
+
+    <button class="flecha-final-datos" id="flecha-final-datos">
+        →
+    </button>
+
+</section>
+
+    </main>
+
+
+    <script src="js/datos.js"></script>
 
 </body>
 
-</html> 
+</html>

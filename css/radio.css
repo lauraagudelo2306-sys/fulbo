@@ -73,11 +73,9 @@ body {
     transform: translate(-50%, -50%);
 }
 
-
 .perilla:hover {
     transform: translate(-50%, -50%) scale(1.1);
 }
-
 
 .perilla-relato {
     top: 59%;
@@ -86,7 +84,6 @@ body {
     width: 30px;
     height: 30px;
 }
-
 
 .perilla-seleccion {
     top: 61%;
@@ -145,7 +142,6 @@ body {
     z-index: 30 !important;
 }
 
-
 .frecuencia-radio {
     position: absolute;
 
@@ -172,6 +168,7 @@ body {
 /* =========================
    RECONSTRUCCIÓN DE LA JUGADA
 ========================= */
+
 .reconstruccion-jugada {
     position: absolute;
 
@@ -212,6 +209,7 @@ body {
         visibility 0s linear 0s;
 }
 
+
 /* =========================
    SECUENCIA
 ========================= */
@@ -249,7 +247,6 @@ body {
         transform 0.5s ease;
 }
 
-
 .paso-jugada.visible {
     opacity: 1;
 
@@ -275,7 +272,6 @@ body {
         transform 0.4s ease;
 }
 
-
 .flecha-jugada.visible {
     opacity: 1;
 
@@ -300,7 +296,6 @@ body {
     opacity: 0;
 }
 
-
 .paso-gol span {
     display: inline-block;
 
@@ -308,7 +303,6 @@ body {
 
     transform: translateY(12px);
 }
-
 
 .paso-gol.visible {
     opacity: 1;
@@ -321,38 +315,28 @@ body {
 
 .paso-gol.visible span:nth-child(1) {
     animation: letraGol 0.35s ease forwards;
-
     animation-delay: 0s;
 }
 
-
 .paso-gol.visible span:nth-child(2) {
     animation: letraGol 0.35s ease forwards;
-
     animation-delay: 0.08s;
 }
 
-
 .paso-gol.visible span:nth-child(3) {
     animation: letraGol 0.35s ease forwards;
-
     animation-delay: 0.16s;
 }
 
-
 .paso-gol.visible span:nth-child(4) {
     animation: letraGol 0.35s ease forwards;
-
     animation-delay: 0.24s;
 }
 
-
 .paso-gol.visible span:nth-child(5) {
     animation: letraGol 0.35s ease forwards;
-
     animation-delay: 0.32s;
 }
-
 
 @keyframes letraGol {
 
@@ -418,7 +402,6 @@ body {
     margin-bottom: 18px;
 }
 
-
 .texto-radio-final p {
     margin: 0;
 
@@ -473,6 +456,7 @@ body {
     opacity: 1;
     transform: translate(0, 0);
 }
+
 
 /* =========================
    LO QUE NO SE ESCUCHA
@@ -603,4 +587,383 @@ body {
 
 .linea-trayectoria span {
     font-size: 18px;
+}
+
+
+/* =========================
+   INVESTIGACIÓN DE LA RADIO
+========================= */
+
+.investigacion-radio {
+    position: absolute;
+
+    left: 50%;
+    top: calc(50% + 285px);
+
+    width: 700px;
+    max-width: 75vw;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 45px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0s linear 0.8s;
+
+    z-index: 25;
+}
+
+.investigacion-radio.visible {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateX(-50%);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0s linear 0s;
+}
+
+
+/* =========================
+   BOTONES DE INVESTIGACIÓN
+========================= */
+
+.boton-investigacion {
+    width: 180px;
+    min-height: 55px;
+
+    padding: 10px 8px;
+
+    background: transparent;
+
+    border: none;
+    border-top: 1px solid #171717;
+
+    color: #171717;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    line-height: 1.35;
+    letter-spacing: 1.3px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.boton-investigacion:hover {
+    transform: translateY(-3px);
+    opacity: 0.65;
+}
+
+.boton-investigacion:focus-visible {
+    outline: 1px solid #171717;
+    outline-offset: 5px;
+}
+
+
+/* =========================
+   POPUPS DE INVESTIGACIÓN
+========================= */
+
+.popup-radio {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 560px;
+    max-width: 55vw;
+
+    min-height: 330px;
+
+    box-sizing: border-box;
+
+    padding: 55px 60px 50px;
+
+    background: #f3f1eb;
+    border: 1px solid #171717;
+
+    transform: translate(-50%, -50%) scale(0.97);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        visibility 0s linear 0.35s;
+
+    z-index: 100;
+}
+
+.popup-radio.abierto {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translate(-50%, -50%) scale(1);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        visibility 0s linear 0s;
+}
+
+
+/* =========================
+   CONTENIDO DEL POPUP
+========================= */
+
+.contenido-popup {
+    width: 100%;
+    max-width: 460px;
+
+    margin: 0 auto;
+}
+
+.titulo-popup {
+    margin-bottom: 28px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-align: center;
+}
+
+.contenido-popup p {
+    margin: 0 0 20px;
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    letter-spacing: 0.1px;
+}
+
+.contenido-popup p:last-child {
+    margin-bottom: 0;
+}
+
+.contenido-popup strong {
+    font-weight: 600;
+}
+
+
+/* =========================
+   CERRAR POPUP
+========================= */
+
+.cerrar-popup {
+    position: absolute;
+
+    top: 18px;
+    right: 22px;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    color: #171717;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 25px;
+    font-weight: 400;
+
+    line-height: 30px;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.cerrar-popup:hover {
+    opacity: 0.5;
+    transform: rotate(5deg);
+}
+
+.cerrar-popup:focus-visible {
+    outline: 1px solid #171717;
+    outline-offset: 3px;
+}
+
+
+/* =========================
+   COMPARACIÓN CROQUIS / RADIO
+========================= */
+
+.comparacion-representaciones {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    margin: 30px 0;
+
+    padding: 20px 0;
+
+    border-top: 1px solid #171717;
+    border-bottom: 1px solid #171717;
+}
+
+.comparacion-representaciones > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.comparacion-representaciones strong {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+.comparacion-representaciones span {
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   CONTINUAR
+========================= */
+
+.continuar-radio {
+    position: absolute;
+
+    right: 45px;
+    bottom: 35px;
+
+    display: none;
+
+    font-size: 30px;
+    font-weight: 400;
+
+    color: #171717;
+
+    cursor: pointer;
+
+    z-index: 40;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.continuar-radio:hover {
+    opacity: 0.5;
+    transform: translateX(5px);
+}
+
+.continuar-radio.visible {
+    display: block;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .contenedor-principal-radio {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .contenedor-radio-perillas {
+        width: 650px;
+        max-width: 78vw;
+    }
+
+    .investigacion-radio {
+        width: 90vw;
+        gap: 20px;
+    }
+
+    .boton-investigacion {
+        width: 170px;
+    }
+
+    .popup-radio {
+        width: 600px;
+        max-width: 75vw;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .contenedor-radio-perillas {
+        width: 600px;
+        max-width: 90vw;
+    }
+
+    .investigacion-radio {
+        width: 90vw;
+
+        gap: 10px;
+    }
+
+    .boton-investigacion {
+        width: 33.333%;
+
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .popup-radio {
+        width: 90vw;
+        max-width: 90vw;
+
+        min-height: 0;
+
+        padding: 50px 30px 35px;
+    }
+
+    .contenido-popup p {
+        font-size: 12px;
+    }
+
+    .comparacion-representaciones {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .continuar-radio {
+        right: 25px;
+        bottom: 25px;
+    }
+
 }

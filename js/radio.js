@@ -42,6 +42,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const contenedorRadio =
         document.querySelector(".contenedor-radio-perillas");
 
+    const capaOmitida =
+        document.getElementById("capa-omitida");
+
+    const investigacionRadio =
+        document.querySelector(".investigacion-radio");
+
+    const continuarRadio =
+        document.getElementById("continuar-radio");
+
 
     let reproduciendo = false;
     let reconstruccionIniciada = false;
@@ -68,14 +77,34 @@ document.addEventListener("DOMContentLoaded", () => {
                 audioInterferencia.currentTime = 0;
             }
 
-            /* Cerrar "lo que no se escucha" */
 
-            const capaOmitida =
-                document.getElementById("capa-omitida");
+            /* Cerrar "lo que no se escucha" */
 
             if (capaOmitida) {
                 capaOmitida.classList.remove("activo-omitido");
             }
+
+
+            /* Ocultar investigación */
+
+            if (investigacionRadio) {
+                investigacionRadio.classList.remove("visible");
+            }
+
+
+            /* Ocultar flecha */
+
+            if (continuarRadio) {
+                continuarRadio.classList.remove("visible");
+            }
+
+
+            /* Cerrar cualquier popup abierto */
+
+            document.querySelectorAll(".popup-radio").forEach((popup) => {
+                popup.classList.remove("abierto");
+            });
+
 
             reconstruccionIniciada = false;
             reconstruccionMostrada = false;
@@ -389,9 +418,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         btnSeleccion.addEventListener("click", () => {
 
-            const capaOmitida =
-                document.getElementById("capa-omitida");
-
             if (!capaOmitida) return;
 
 
@@ -445,12 +471,116 @@ document.addEventListener("DOMContentLoaded", () => {
                MOSTRAR LO QUE NO SE ESCUCHA
             ========================= */
 
-            capaOmitida.classList.toggle(
-                "activo-omitido"
-            );
+            capaOmitida.classList.add("activo-omitido");
+
+
+            /* =========================
+               MOSTRAR INVESTIGACIÓN
+            ========================= */
+
+            if (investigacionRadio) {
+                investigacionRadio.classList.add("visible");
+            }
+
+
+            /* =========================
+               MOSTRAR FLECHA
+            ========================= */
+
+            if (continuarRadio) {
+                continuarRadio.classList.add("visible");
+            }
+
+        });
+
+    }
+
+
+    /* =========================
+       BOTONES DE INVESTIGACIÓN
+    ========================= */
+
+    const botonesInvestigacion =
+        document.querySelectorAll(".boton-investigacion");
+
+
+    botonesInvestigacion.forEach((boton) => {
+
+        boton.addEventListener("click", () => {
+
+            const idPopup =
+                boton.getAttribute("data-popup");
+
+            if (!idPopup) return;
+
+            const popup =
+                document.getElementById(idPopup);
+
+            if (!popup) return;
+
+
+            /* Cerrar otros popups */
+
+            document.querySelectorAll(".popup-radio").forEach((otroPopup) => {
+
+                if (otroPopup !== popup) {
+                    otroPopup.classList.remove("abierto");
+                }
+
+            });
+
+
+            /* Abrir el seleccionado */
+
+            popup.classList.add("abierto");
+
+        });
+
+    });
+
+
+    /* =========================
+       CERRAR POPUPS
+    ========================= */
+
+    const botonesCerrar =
+        document.querySelectorAll(".cerrar-popup");
+
+
+    botonesCerrar.forEach((boton) => {
+
+        boton.addEventListener("click", () => {
+
+            const popup =
+                boton.closest(".popup-radio");
+
+            if (!popup) return;
+
+            popup.classList.remove("abierto");
+
+        });
+
+    });
+
+
+    /* =========================
+       FLECHA — SIGUIENTE SECCIÓN
+    ========================= */
+
+    if (continuarRadio) {
+
+        continuarRadio.addEventListener("click", () => {
+
+            /*
+                CAMBIAR ESTA RUTA CUANDO TENGAMOS
+                DEFINIDO EL NOMBRE DE LA SIGUIENTE PÁGINA.
+            */
+
+            window.location.href = "datos.html";
 
         });
 
     }
 
 });
+

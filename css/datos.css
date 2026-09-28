@@ -1,75 +1,1120 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #f3f1eb;
+    color: #171717;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+    position: relative;
+}
+
+
 /* =========================
-   SECCIÓN RADIO ANIMADA
+   NÚMERO
 ========================= */
 
-#seccion-radio-animada {
+.numero-datos {
+    position: fixed;
+    top: 22px;
+    left: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 100;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.encabezado-datos {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 48px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.marca {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.etiqueta {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   PANTALLA INICIAL
+========================= */
+
+.entrada-datos {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 80px 40px;
+
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 100px 8%;
+    align-items: center;
+    justify-content: center;
+
     background: #f3f1eb;
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+
+    z-index: 10;
 }
 
-/* Título de la radio con la misma animación de entrada */
-.radio-titulo {
-    font-size: clamp(65px, 9vw, 130px);
-    line-height: 0.85;
-    letter-spacing: -6px;
+.entrada-datos.oculta {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-20px);
+}
+
+.pregunta-datos {
+    max-width: 850px;
+    text-align: center;
+
+    font-size: clamp(30px, 5vw, 68px);
+    line-height: 0.98;
     font-weight: 700;
-    color: #171717;
-    margin-bottom: 30px;
-    animation: entradaRadio 1s ease-out forwards;
+    letter-spacing: -2px;
 }
 
-@keyframes entradaRadio {
+.flecha-entrada {
+    margin-top: 45px;
+
+    width: 52px;
+    height: 52px;
+
+    border: 1px solid #171717;
+    border-radius: 50%;
+
+    background: transparent;
+    color: #171717;
+
+    font-family: inherit;
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.flecha-entrada:hover {
+    background: #171717;
+    color: #f3f1eb;
+    transform: translateY(4px);
+}
+
+
+/* =========================
+   EXPERIENCIA
+========================= */
+
+.experiencia-datos {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 82px 40px 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    overflow: hidden;
+
+    background: #f3f1eb;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0s linear 0.7s;
+
+    z-index: 5;
+}
+
+.experiencia-datos.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0s linear 0s;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.titulo-experiencia {
+    margin: 0 0 14px;
+
+    font-size: clamp(23px, 2.5vw, 34px);
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -1px;
+
+    opacity: 0;
+    transform: translateY(10px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+
+    flex-shrink: 0;
+}
+
+.titulo-experiencia.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   CANCHA
+========================= */
+
+.cancha-datos {
+    position: relative;
+
+    width: min(820px, 72vw);
+    height: min(300px, 29vh);
+    min-height: 190px;
+
+    border: 1px solid #171717;
+
+    overflow: visible;
+
+    flex-shrink: 0;
+
+    transform: translateZ(0);
+}
+
+
+/* Línea central */
+
+.linea-central {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 1px;
+    height: 100%;
+
+    background: #171717;
+}
+
+
+/* Círculo central */
+
+.circulo-central {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 100px;
+    height: 100px;
+
+    border: 1px solid #171717;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* Áreas */
+
+.area {
+    position: absolute;
+
+    top: 50%;
+
+    width: 105px;
+    height: 175px;
+
+    border: 1px solid #171717;
+
+    transform: translateY(-50%);
+}
+
+.area-izquierda {
+    left: 0;
+}
+
+.area-derecha {
+    right: 0;
+}
+
+
+/* Porterías */
+
+.portería {
+    position: absolute;
+
+    top: 50%;
+
+    width: 16px;
+    height: 80px;
+
+    border: 1px solid #171717;
+
+    transform: translateY(-50%);
+}
+
+.porteria-izquierda {
+    left: -16px;
+}
+
+.porteria-derecha {
+    right: -16px;
+}
+
+
+/* =========================
+   JUGADORES
+========================= */
+
+.jugador-dato {
+    position: absolute;
+
+    width: 13px;
+    height: 13px;
+
+    border-radius: 50%;
+
+    background: #f3f1eb;
+    border: 1px solid #171717;
+
+    z-index: 5;
+
+    transition:
+        left 1s ease,
+        top 1s ease,
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.jugador-1 {
+    left: 20%;
+    top: 35%;
+}
+
+.jugador-2 {
+    left: 31%;
+    top: 65%;
+}
+
+.jugador-3 {
+    left: 43%;
+    top: 30%;
+}
+
+.jugador-4 {
+    left: 52%;
+    top: 63%;
+}
+
+.jugador-5 {
+    left: 66%;
+    top: 38%;
+}
+
+.jugador-6 {
+    left: 75%;
+    top: 65%;
+}
+
+
+/* =========================
+   BALÓN
+========================= */
+
+.balon-dato {
+    position: absolute;
+
+    left: 43%;
+    top: 42%;
+
+    font-size: 20px;
+    line-height: 1;
+
+    z-index: 6;
+
+    transition:
+        left 1s ease,
+        top 1s ease;
+}
+
+
+/* =========================
+   TRACKING
+========================= */
+
+.info-tracking {
+    margin-top: 13px;
+
+    max-width: 550px;
+
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(8px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+
+    flex-shrink: 0;
+}
+
+.info-tracking.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.etiqueta-tracking {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+
+    margin-bottom: 4px;
+}
+
+.texto-tracking {
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.25;
+}
+
+
+/* =========================
+   SELECTOR
+========================= */
+
+.selector-datos {
+    margin-top: 17px;
+
+    width: min(650px, 85vw);
+
+    opacity: 0;
+    transform: translateY(8px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+
+    flex-shrink: 0;
+}
+
+.selector-datos.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pregunta-selector {
+    text-align: center;
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    margin-bottom: 7px;
+}
+
+.opciones-datos {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    border-top: 1px solid #171717;
+    border-left: 1px solid #171717;
+}
+
+.opcion-dato {
+    min-height: 42px;
+
+    border: none;
+    border-right: 1px solid #171717;
+    border-bottom: 1px solid #171717;
+
+    background: transparent;
+    color: #171717;
+
+    font-family: inherit;
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.opcion-dato:nth-child(2),
+.opcion-dato:nth-child(4) {
+    border-right: none;
+}
+
+.opcion-dato:hover,
+.opcion-dato.activo {
+    background: #171717;
+    color: #f3f1eb;
+}
+
+
+/* =========================
+   EXPLICACIÓN
+========================= */
+
+.explicacion-dato {
+    margin-top: 12px;
+
+    max-width: 600px;
+
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(8px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+
+    flex-shrink: 0;
+}
+
+.explicacion-dato.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.titulo-explicacion {
+    margin-bottom: 4px;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.explicacion-dato p {
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 1.25;
+}
+
+
+/* =========================
+   PREGUNTA LÍMITE
+========================= */
+
+.pregunta-limite {
+    position: fixed;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 92px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: #f3f1eb;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        visibility 0s linear 0.5s;
+
+    z-index: 30;
+}
+
+.pregunta-limite.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        visibility 0s linear 0s;
+}
+
+.pregunta-limite > div {
+    font-size: 19px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.flecha-limite {
+    margin-top: 5px;
+
+    width: 40px;
+    height: 30px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 24px;
+
+    cursor: pointer;
+    color: #171717;
+}
+
+
+/* =========================
+   FUERA
+========================= */
+
+.fuera-datos {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 85px 40px 35px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: #f3f1eb;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0s linear 0.7s;
+
+    z-index: 50;
+}
+
+.fuera-datos.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0s linear 0s;
+}
+
+
+/* =========================
+   TÍTULO FUERA
+========================= */
+
+.titulo-fuera {
+    max-width: 900px;
+
+    text-align: center;
+
+    font-size: clamp(30px, 4.5vw, 60px);
+    line-height: 0.95;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.subtitulo-fuera {
+    max-width: 650px;
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-size: 14px;
+    line-height: 1.35;
+
+    opacity: 0.65;
+}
+
+
+/* =========================
+   CAPAS
+========================= */
+
+.capas-fuera {
+    width: min(850px, 90vw);
+
+    margin-top: 38px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+.capa-fuera {
+    width: 100%;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.fuera-datos.visible .capa-fuera {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fuera-datos.visible .capa-invisible {
+    transition-delay: 0.2s;
+}
+
+.fuera-datos.visible .capa-no-ocurrio {
+    transition-delay: 0.4s;
+}
+
+
+/* =========================
+   ETIQUETA CAPA
+========================= */
+
+.etiqueta-capa {
+    margin-bottom: 9px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   ELEMENTOS
+========================= */
+
+.elementos-capa {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7px;
+}
+
+.elementos-capa span {
+    border: 1px solid #171717;
+
+    padding: 8px 13px;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.capa-medible .elementos-capa span {
+    background: #171717;
+    color: #f3f1eb;
+}
+
+
+/* =========================
+   LO QUE NO OCURRIÓ
+========================= */
+
+.capa-no-ocurrio {
+    padding-top: 3px;
+}
+
+.frase-no-ocurrio {
+    text-align: center;
+
+    font-size: clamp(20px, 2.5vw, 32px);
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+
+/* =========================
+   CRÍTICA
+========================= */
+
+.critica-datos {
+    width: min(900px, 90vw);
+
+    margin-top: 35px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #171717;
+
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.fuera-datos.visible .critica-datos {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition-delay: 0.7s;
+}
+
+.critica-principal {
+    font-size: clamp(23px, 3.2vw, 42px);
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+}
+
+.critica-secundaria {
+    margin-top: 10px;
+
+    font-size: clamp(17px, 2.2vw, 28px);
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+
+/* =========================
+   CIERRE
+========================= */
+
+.cierre-datos {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: #f3f1eb;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0s linear 0.8s;
+
+    z-index: 60;
+}
+
+.cierre-datos.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0s linear 0s;
+}
+
+.cierre-principal {
+    max-width: 900px;
+
+    font-size: clamp(32px, 5vw, 70px);
+    line-height: 0.95;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.cierre-secundario {
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.flecha-final-datos {
+    position: absolute;
+
+    right: 30px;
+    bottom: 40px;
+
+    width: 52px;
+    height: 52px;
+
+    border: 1px solid #171717;
+    border-radius: 50%;
+
+    background: transparent;
+    color: #171717;
+
+    font-family: inherit;
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.flecha-final-datos:hover {
+    background: #171717;
+    color: #f3f1eb;
+}
+
+
+/* =========================
+   RECORRIDOS
+========================= */
+
+.recorrido-jugador {
+    position: absolute;
+
+    height: 2px;
+
+    background: #171717;
+
+    transform-origin: left center;
+
+    opacity: 0;
+
+    animation:
+        aparecerRecorrido 0.6s ease forwards;
+
+    z-index: 2;
+}
+
+@keyframes aparecerRecorrido {
+
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: scaleX(0);
     }
+
+    to {
+        opacity: 0.8;
+        transform: scaleX(1);
+    }
+
+}
+
+
+/* =========================
+   PASES
+========================= */
+
+.conexion-pase {
+    position: absolute;
+
+    height: 1px;
+
+    background: #171717;
+
+    transform-origin: left center;
+
+    opacity: 0;
+
+    animation:
+        aparecerPase 0.6s ease forwards;
+
+    z-index: 3;
+}
+
+@keyframes aparecerPase {
+
+    from {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
     to {
         opacity: 1;
-        transform: translateY(0);
     }
+
 }
 
-/* Ecualizador / Ondas animadas (crecen igual que las líneas de la cancha) */
-.ondas-container {
-    display: flex;
-    align-items: flex-end;
-    gap: 8px;
-    height: 70px;
-    margin-top: 20px;
+
+/* =========================
+   ZONAS
+========================= */
+
+.zona-actividad {
+    position: absolute;
+
+    border: 1px solid #171717;
+
+    background: rgba(23, 23, 23, 0.08);
+
+    opacity: 0;
+
+    animation:
+        aparecerZona 0.7s ease forwards;
+
+    z-index: 1;
 }
 
-.ondas-container .onda-barra {
-    width: 6px;
-    height: 0; /* Empieza en 0 para simular que se "dibuja" */
-    background: #171717;
-    animation: dibujarBarra 1.5s forwards, latidoOnda 1s infinite alternate ease-in-out;
-    animation-delay: 0.5s; /* Retraso para sincronizar */
-}
+@keyframes aparecerZona {
 
-/* Retrasos escalonados para cada barra de la radio */
-.ondas-container .onda-barra:nth-child(1) { animation-delay: 0.2s, 1.5s; }
-.ondas-container .onda-barra:nth-child(2) { animation-delay: 0.4s, 1.7s; }
-.ondas-container .onda-barra:nth-child(3) { animation-delay: 0.3s, 1.6s; }
-.ondas-container .onda-barra:nth-child(4) { animation-delay: 0.6s, 1.9s; }
-.ondas-container .onda-barra:nth-child(5) { animation-delay: 0.5s, 1.8s; }
-
-@keyframes dibujarBarra {
     from {
-        height: 0;
+        opacity: 0;
+        transform: scale(0.8);
     }
+
     to {
-        height: 100%;
+        opacity: 1;
+        transform: scale(1);
     }
+
 }
 
-@keyframes latidoOnda {
-    0% {
-        transform: scaleY(0.4);
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .encabezado-datos {
+        width: calc(100% - 32px);
     }
-    100% {
-        transform: scaleY(1);
+
+    .marca {
+        font-size: 15px;
     }
+
+    .etiqueta {
+        font-size: 10px;
+    }
+
+    .numero-datos {
+        display: none;
+    }
+
+    .entrada-datos {
+        padding: 90px 24px 50px;
+    }
+
+    .pregunta-datos {
+        font-size: clamp(30px, 9vw, 48px);
+    }
+
+    .experiencia-datos {
+        padding: 80px 20px 20px;
+    }
+
+    .cancha-datos {
+        width: 92vw;
+        height: 38vw;
+        min-height: 190px;
+    }
+
+    .area {
+        width: 65px;
+        height: 110px;
+    }
+
+    .circulo-central {
+        width: 75px;
+        height: 75px;
+    }
+
+    .selector-datos {
+        width: 100%;
+    }
+
+    .titulo-fuera {
+        font-size: clamp(30px, 9vw, 48px);
+    }
+
+    .capas-fuera {
+        width: 100%;
+        margin-top: 30px;
+        gap: 20px;
+    }
+
+    .critica-datos {
+        margin-top: 25px;
+    }
+
 }

@@ -92,9 +92,10 @@
 
 
         <!-- RECONSTRUCCIÓN DE LA JUGADA -->
-<div class="titulo-reconstruccion">
-    RECONSTRUCCIÓN DE LA JUGADA
-</div>
+
+        <div class="titulo-reconstruccion">
+            RECONSTRUCCIÓN DE LA JUGADA
+        </div>
 
         <section
             class="reconstruccion-jugada"
@@ -173,58 +174,232 @@
 
         </section>
 
-<!-- LO QUE NO SE ESCUCHA -->
 
-<section
-    class="capa-omitida"
-    id="capa-omitida"
->
+        <!-- LO QUE NO SE ESCUCHA -->
 
-    <div class="titulo-omitido">
-        LO QUE NO SE ESCUCHA
-    </div>
+        <section
+            class="capa-omitida"
+            id="capa-omitida"
+        >
 
-    <div class="elemento-omitido posiciones">
+            <div class="titulo-omitido">
+                LO QUE NO SE ESCUCHA
+            </div>
 
-        <span>POSICIONES</span>
+            <div class="elemento-omitido posiciones">
 
-        <div class="puntos-espacio">
-            <i></i>
-            <i></i>
-            <i></i>
+                <span>POSICIONES</span>
+
+                <div class="puntos-espacio">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
+
+            </div>
+
+
+            <div class="elemento-omitido espacio">
+
+                <span>ESPACIO</span>
+
+                <div class="linea-espacio">
+                    <b>←</b>
+                    <hr>
+                    <b>→</b>
+                </div>
+
+            </div>
+
+
+            <div class="elemento-omitido trayectoria">
+
+                <span>TRAYECTORIA</span>
+
+                <div class="linea-trayectoria">
+                    <i></i>
+                    <span>→</span>
+                    <i></i>
+                    <span>→</span>
+                    <i></i>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INVESTIGACIÓN DE LA RADIO -->
+
+        <section class="investigacion-radio">
+
+            <button
+                class="boton-investigacion"
+                data-popup="popup-contexto"
+            >
+                CONTEXTO<br>HISTÓRICO
+            </button>
+
+
+            <button
+                class="boton-investigacion"
+                data-popup="popup-representacion"
+            >
+                ¿CÓMO FUNCIONABA<br>LA REPRESENTACIÓN?
+            </button>
+
+
+            <button
+                class="boton-investigacion"
+                data-popup="popup-croquis"
+            >
+                RELACIÓN<br>CON EL CROQUIS
+            </button>
+
+        </section>
+
+
+        <!-- POPUP: CONTEXTO HISTÓRICO -->
+
+        <div
+            class="popup-radio"
+            id="popup-contexto"
+        >
+
+            <button
+                class="cerrar-popup"
+                aria-label="Cerrar"
+            >
+                ×
+            </button>
+
+            <div class="contenido-popup">
+
+                <div class="titulo-popup">
+                    CONTEXTO HISTÓRICO
+                </div>
+
+                <p>
+                    El croquis y la radio fueron sistemas de representación
+                    que coexistieron durante buena parte del siglo XX.
+                    Ambos respondían a una misma necesidad: volver
+                    representable una jugada que no podía ser vista
+                    por todas las personas.
+                </p>
+
+                <p>
+                    Con la llegada de la televisión aparecieron nuevas
+                    posibilidades de representación mediante imágenes
+                    en movimiento. Aun así, durante buena parte de los
+                    años 60, 70 y 80, el fútbol colombiano tuvo una
+                    presencia limitada en televisión, por lo que la radio
+                    continuó siendo una de las principales formas de
+                    seguir los partidos.
+                </p>
+
+            </div>
+
         </div>
 
-    </div>
 
+        <!-- POPUP: REPRESENTACIÓN -->
 
-    <div class="elemento-omitido espacio">
+        <div
+            class="popup-radio"
+            id="popup-representacion"
+        >
 
-        <span>ESPACIO</span>
+            <button
+                class="cerrar-popup"
+                aria-label="Cerrar"
+            >
+                ×
+            </button>
 
-        <div class="linea-espacio">
-            <b>←</b>
-            <hr>
-            <b>→</b>
+            <div class="contenido-popup">
+
+                <div class="titulo-popup">
+                    ¿CÓMO FUNCIONABA LA REPRESENTACIÓN?
+                </div>
+
+                <p>
+                    La radio puede entenderse como un
+                    <strong>sistema de representación complejo</strong>
+                    que realizaba un <strong>mapeo</strong> ya que transformaba
+                    un fenómeno que no podía verse directamente (el partido)
+                    en una experiencia que podía seguirse mediante la escucha.
+                </p>
+
+                <p>
+                    Este mapeo dependía de la selección del narrador.
+                    Mientras el partido ocurría, debía decidir qué contar:
+                    quién tenía el balón, qué movimiento era importante,
+                    qué estaba sucediendo y qué momento merecía ser narrado.
+                    La voz convertía esos acontecimientos en palabras,
+                    mientras el oyente completaba con su imaginación
+                    aquello que no podía ver.
+                </p>
+
+            </div>
+
         </div>
 
-    </div>
 
+        <!-- POPUP: RELACIÓN CON EL CROQUIS -->
 
-    <div class="elemento-omitido trayectoria">
+        <div
+            class="popup-radio"
+            id="popup-croquis"
+        >
 
-        <span>TRAYECTORIA</span>
+            <button
+                class="cerrar-popup"
+                aria-label="Cerrar"
+            >
+                ×
+            </button>
 
-        <div class="linea-trayectoria">
-            <i></i>
-            <span>→</span>
-            <i></i>
-            <span>→</span>
-            <i></i>
+            <div class="contenido-popup">
+
+                <div class="titulo-popup">
+                    RELACIÓN CON EL CROQUIS
+                </div>
+
+                <p>
+                    Aunque ambos sistemas representaban una misma jugada,
+                    cada uno realizaba el mapeo de una manera diferente.
+                </p>
+
+                <div class="comparacion-representaciones">
+
+                    <div>
+                        <strong>CROQUIS</strong>
+                        <span>
+                            Observar → seleccionar → interpretar → dibujar
+                        </span>
+                    </div>
+
+                    <div>
+                        <strong>RADIO</strong>
+                        <span>
+                            Escuchar → seleccionar → narrar → imaginar
+                        </span>
+                    </div>
+
+                </div>
+
+                <p>
+                    El croquis fijaba la jugada en el papel después de que
+                    ocurría. La radio la construía mientras ocurría.
+                    En ambos casos, representar implicaba seleccionar:
+                    hacer visibles algunos aspectos del acontecimiento
+                    y dejar otros por fuera.
+                </p>
+
+            </div>
+
         </div>
 
-    </div>
-
-</section>
 
         <!-- AUDIO DE LA TRANSMISIÓN -->
 
@@ -233,11 +408,16 @@
             src="sonidos/radio.wav"
             preload="auto"
         ></audio>
-<audio
-    id="audio-interferencia"
-    src="sonidos/interferenciaradio.mp3"
-    preload="auto"
-></audio>
+
+
+        <!-- AUDIO DE INTERFERENCIA -->
+
+        <audio
+            id="audio-interferencia"
+            src="sonidos/interferenciaradio.mp3"
+            preload="auto"
+        ></audio>
+
 
         <!-- CONTINUAR -->
 
@@ -256,4 +436,3 @@
 </body>
 
 </html>
-
