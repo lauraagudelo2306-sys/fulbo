@@ -1,0 +1,510 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    background: #f3f1eb;
+    color: #171717;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+    position: relative;
+}
+
+
+/* =========================
+   NÚMERO
+========================= */
+
+.numero-final {
+    position: fixed;
+    top: 22px;
+    left: 24px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    z-index: 100;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.encabezado-final {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: calc(100% - 48px);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 100;
+
+    pointer-events: none;
+}
+
+.marca {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.etiqueta {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.final {
+    width: 100%;
+}
+
+
+/* =========================
+   REFLEXIÓN
+========================= */
+
+.reflexion-final {
+    min-height: 100vh;
+
+    padding: 150px 40px 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.titulo-final {
+    max-width: 1000px;
+
+    font-size: clamp(45px, 7vw, 100px);
+    line-height: 0.9;
+
+    font-weight: 700;
+    letter-spacing: -4px;
+
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.titulo-final.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.texto-final {
+    max-width: 620px;
+
+    margin-top: 65px;
+
+    font-size: 19px;
+    line-height: 1.45;
+}
+
+.texto-final p {
+    margin: 0 0 25px;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.texto-final p.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   REPRESENTACIONES
+========================= */
+
+.representaciones-final {
+
+    min-height: 75vh;
+
+    padding: 100px 8vw;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    align-items: center;
+
+    gap: 25px;
+
+    border-top: 1px solid #171717;
+    border-bottom: 1px solid #171717;
+}
+
+.representacion {
+
+    min-height: 220px;
+
+    padding: 35px 25px;
+
+    border: 1px solid #171717;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.representacion.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.representacion span {
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.representacion p {
+
+    margin-top: 20px;
+
+    font-size: 22px;
+    line-height: 1.1;
+
+    font-weight: 500;
+}
+
+
+/* =========================
+   IDEA CENTRAL
+========================= */
+
+.idea-final {
+
+    min-height: 100vh;
+
+    padding: 120px 40px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.idea-final > p {
+
+    max-width: 620px;
+
+    font-size: 20px;
+    line-height: 1.45;
+
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.idea-final > p.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.frase-grande {
+
+    margin-top: 80px;
+
+    font-size: clamp(55px, 8vw, 120px);
+    line-height: 0.86;
+
+    font-weight: 700;
+    letter-spacing: -5px;
+
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.frase-grande.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   CONCLUSIÓN
+========================= */
+
+.conclusion-final {
+
+    min-height: 90vh;
+
+    padding: 120px 40px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    border-top: 1px solid #171717;
+}
+
+.conclusion-final p {
+
+    max-width: 720px;
+
+    margin: 0 0 35px;
+
+    font-size: clamp(21px, 2.5vw, 32px);
+    line-height: 1.15;
+
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.conclusion-final p.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   ÚLTIMO GOLPE
+========================= */
+
+.ultimo-final {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 100px 40px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    border-top: 1px solid #171717;
+}
+
+.ultimo-texto {
+
+    display: flex;
+    flex-direction: column;
+
+    font-size: clamp(42px, 6vw, 85px);
+    line-height: 0.92;
+
+    font-weight: 700;
+    letter-spacing: -3px;
+}
+
+.ultimo-texto span {
+
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.ultimo-texto span.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.firma-final {
+
+    margin-top: 90px;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    opacity: 0;
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.firma-final.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   CRÉDITOS
+========================= */
+
+.creditos-final {
+
+    position: absolute;
+
+    bottom: 28px;
+    left: 35px;
+
+    font-size: 11px;
+    line-height: 1.5;
+
+    text-align: left;
+    letter-spacing: 0.3px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .encabezado-final {
+        width: calc(100% - 32px);
+    }
+
+    .marca {
+        font-size: 15px;
+    }
+
+    .etiqueta {
+        font-size: 10px;
+    }
+
+    .numero-final {
+        display: none;
+    }
+
+
+    .reflexion-final {
+        padding: 120px 24px 80px;
+    }
+
+    .titulo-final {
+        font-size: clamp(43px, 12vw, 65px);
+        letter-spacing: -3px;
+    }
+
+    .texto-final {
+        margin-top: 45px;
+        font-size: 17px;
+    }
+
+
+    .representaciones-final {
+        min-height: auto;
+
+        padding: 70px 24px;
+
+        grid-template-columns: 1fr;
+    }
+
+    .representacion {
+        min-height: 170px;
+    }
+
+
+    .idea-final {
+        padding: 90px 24px;
+    }
+
+    .frase-grande {
+        margin-top: 55px;
+
+        font-size: clamp(48px, 13vw, 75px);
+        letter-spacing: -3px;
+    }
+
+
+    .conclusion-final {
+        padding: 90px 24px;
+    }
+
+    .conclusion-final p {
+        font-size: 21px;
+    }
+
+
+    .ultimo-final {
+        padding: 80px 24px;
+    }
+
+    .ultimo-texto {
+        font-size: clamp(38px, 11vw, 65px);
+        letter-spacing: -2px;
+    }
+
+    .firma-final {
+        margin-top: 65px;
+    }
+
+    .creditos-final {
+        bottom: 20px;
+        left: 24px;
+
+        font-size: 10px;
+    }
+
+}

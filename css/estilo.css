@@ -52,18 +52,17 @@ video {
 
 /* TÍTULO */
 
+/* =========================
+   TÍTULO
+========================= */
+
 .titulo {
     position: absolute;
 
-    left: -18px;
+    left: 35px;
     top: 50%;
 
     transform: translateY(-50%);
-
-    font-size: clamp(110px, 17vw, 240px);
-    font-weight: 700;
-    letter-spacing: -9px;
-    line-height: 0.8;
 
     color: #171717;
 
@@ -72,6 +71,15 @@ video {
     animation: entradaTitulo 1s ease-out forwards;
 }
 
+.titulo p {
+    margin: 0;
+
+    font-size: clamp(65px, 9vw, 135px);
+    font-weight: 700;
+
+    letter-spacing: -5px;
+    line-height: 0.82;
+}
 
 /* SUBTÍTULO */
 

@@ -20,6 +20,7 @@ const fueraDatos = document.getElementById("fuera-datos");
 const cierreDatos = document.getElementById("cierre-datos");
 
 const flechaFinalDatos = document.getElementById("flecha-final-datos");
+const flechaCierreDatos = document.getElementById("flecha-cierre-datos");
 
 const jugadores = document.querySelectorAll(".jugador-dato");
 const balon = document.getElementById("balon-dato");
@@ -373,6 +374,14 @@ flechaLimite.addEventListener("click", () => {
     experienciaDatos.classList.remove("visible");
 
     fueraDatos.classList.add("visible");
+
+});
+
+flechaCierreDatos.addEventListener("click", () => {
+
+    fueraDatos.classList.remove("visible");
+
+    cierreDatos.classList.add("visible");
 
 });
 
