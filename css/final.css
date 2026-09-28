@@ -608,21 +608,28 @@ body {
         letter-spacing: -2px;
     }
 
-    .firma-final {
-        margin-top: 55px;
-        font-size: 13px;
-    }
+  .firma-final {
+    margin-top: 55px;
+    font-size: 13px;
+}
 
-    .creditos-final {
-        left: 24px;
-        bottom: 18px;
-        font-size: 9px;
-    }
+.creditos-final {
+    position: absolute;
+    left: 24px;
+    bottom: 18px;
+    font-size: 9px;
+}
 
-    .flecha-final {
-        right: 24px;
-        bottom: 20px;
-        font-size: 27px;
-    }
+.flecha-final {
+    position: absolute;
+    right: 24px;
+    bottom: 20px;
+    font-size: 27px;
+}
 
+.credito-ia {
+    margin-top: 14px;
+    font-size: 10px;
+    letter-spacing: 0.4px;
+    opacity: 0.55;
 }
